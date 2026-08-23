@@ -239,3 +239,466 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+/* ==========================================================
+   Photo Lightbox
+   Klik elemen dengan class "photo-zoomable" untuk melihat
+   foto dalam ukuran lebih besar.
+   ========================================================== */
+document.addEventListener('DOMContentLoaded', function () {
+  var overlay = document.createElement('div');
+  overlay.className = 'photo-lightbox-overlay';
+  overlay.innerHTML = '<button class="photo-lightbox-close" aria-label="Tutup">&times;</button><img src="" alt="">';
+  document.body.appendChild(overlay);
+
+  var overlayImg = overlay.querySelector('img');
+  var closeBtn = overlay.querySelector('.photo-lightbox-close');
+
+  function openLightbox(src, alt) {
+    overlayImg.src = src;
+    overlayImg.alt = alt || '';
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.photo-zoomable').forEach(function (el) {
+    el.addEventListener('click', function () {
+      openLightbox(el.getAttribute('src'), el.getAttribute('alt'));
+    });
+  });
+
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeLightbox();
+  });
+  closeBtn.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+});
+
+/* ==========================================================
+   Photo Lightbox
+   Panggil openPhotoLightbox(src, alt) langsung dari atribut
+   onclick pada elemen foto untuk memunculkan pop up.
+   ========================================================== */
+(function () {
+  var overlay = null;
+  var overlayImg = null;
+
+  function buildOverlay() {
+    overlay = document.createElement('div');
+    overlay.className = 'photo-lightbox-overlay';
+    overlay.innerHTML = '<button type="button" class="photo-lightbox-close" aria-label="Tutup">&times;</button><img src="" alt="">';
+    document.body.appendChild(overlay);
+
+    overlayImg = overlay.querySelector('img');
+
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closePhotoLightbox();
+    });
+    overlay.querySelector('.photo-lightbox-close').addEventListener('click', closePhotoLightbox);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closePhotoLightbox();
+    });
+  }
+
+  window.openPhotoLightbox = function (src, alt) {
+    if (!overlay) buildOverlay();
+    overlayImg.src = src;
+    overlayImg.alt = alt || '';
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closePhotoLightbox = function () {
+    if (!overlay) return;
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+})();
+
+/* =======================================================
+   CUSTOM ENHANCE — Kontraktor Rumah
+   File JS tambahan (terpisah dari main.js) untuk:
+   1. Animasi angka statistik (count-up) saat terlihat di layar
+   2. Efek reveal halus saat scroll
+   3. Efek ripple pada tombol utama
+   4. Efek parallax ringan pada gambar hero
+   ======================================================= */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ---------- 1. Count-up angka statistik ---------- */
+  function animateCount(el) {
+    const raw = el.textContent.trim();
+    const match = raw.match(/^([^\d]*)(\d+)([^\d]*)$/);
+    if (!match) return;
+
+    const prefix = match[1];
+    const target = parseInt(match[2], 10);
+    const suffix = match[3];
+    const duration = 1400;
+    const startTime = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const current = Math.floor(eased * target);
+      el.textContent = prefix + current + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = prefix + target + suffix;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const countSelectors = [
+    '.badge-item .count',
+    '.achievement-box h3',
+    '.achievements-banner .achievement-item h3'
+  ];
+  const countEls = document.querySelectorAll(countSelectors.join(','));
+
+  if ('IntersectionObserver' in window && countEls.length) {
+    const countObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    countEls.forEach(el => countObserver.observe(el));
+  }
+
+  /* ---------- 2. Scroll reveal halus ---------- */
+  const revealTargets = document.querySelectorAll(
+    '.service-card, .project-item, .cert-card, .team-card, .testimonial-slide, .achievement-box'
+  );
+  revealTargets.forEach(el => el.classList.add('kr-reveal'));
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('kr-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealTargets.forEach(el => revealObserver.observe(el));
+  } else {
+    revealTargets.forEach(el => el.classList.add('kr-visible'));
+  }
+
+  /* ---------- 3. Efek ripple pada tombol utama ---------- */
+  const rippleButtons = document.querySelectorAll(
+    '.btn-primary, .btn-secondary, .btn-cta, .cta-container .btn'
+  );
+
+  rippleButtons.forEach(btn => {
+    btn.style.position = btn.style.position || 'relative';
+    btn.style.overflow = 'hidden';
+
+    btn.addEventListener('click', function (e) {
+      const rect = btn.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      const size = Math.max(rect.width, rect.height) * 1.6;
+
+      ripple.style.position = 'absolute';
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+      ripple.style.borderRadius = '50%';
+      ripple.style.background = 'rgba(255,255,255,0.45)';
+      ripple.style.pointerEvents = 'none';
+      ripple.style.transform = 'scale(0)';
+      ripple.style.transition = 'transform .6s ease, opacity .6s ease';
+      ripple.style.opacity = '1';
+
+      btn.appendChild(ripple);
+      requestAnimationFrame(() => {
+        ripple.style.transform = 'scale(1)';
+        ripple.style.opacity = '0';
+      });
+
+      setTimeout(() => ripple.remove(), 650);
+    });
+  });
+
+  /* ---------- 4. Parallax ringan pada gambar hero ---------- */
+  const heroImage = document.querySelector('.hero-image');
+  if (heroImage && window.matchMedia('(min-width: 992px)').matches) {
+    document.querySelector('.hero.section')?.addEventListener('mousemove', function (e) {
+      const rect = this.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+      const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+      heroImage.style.transform = `translate(${x * 10}px, ${y * 10}px)`;
+      heroImage.style.transition = 'transform .2s ease-out';
+    });
+  }
+
+});
+
+/* =======================================================
+   CUSTOM ENHANCE — Kontraktor Rumah
+   File JS tambahan (terpisah dari main.js) untuk:
+   1. Animasi angka statistik (count-up) saat terlihat di layar
+   2. Efek reveal halus saat scroll
+   3. Efek ripple pada tombol utama
+   4. Efek parallax ringan pada gambar hero
+   ======================================================= */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ---------- 1. Count-up angka statistik ---------- */
+  function animateCount(el) {
+    const raw = el.textContent.trim();
+    const match = raw.match(/^([^\d]*)(\d+)([^\d]*)$/);
+    if (!match) return;
+
+    const prefix = match[1];
+    const target = parseInt(match[2], 10);
+    const suffix = match[3];
+    const duration = 1400;
+    const startTime = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const current = Math.floor(eased * target);
+      el.textContent = prefix + current + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = prefix + target + suffix;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const countSelectors = [
+    '.badge-item .count',
+    '.achievement-box h3',
+    '.achievements-banner .achievement-item h3'
+  ];
+  const countEls = document.querySelectorAll(countSelectors.join(','));
+
+  if ('IntersectionObserver' in window && countEls.length) {
+    const countObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    countEls.forEach(el => countObserver.observe(el));
+  }
+
+  /* ---------- 2. Scroll reveal halus ---------- */
+  const revealTargets = document.querySelectorAll(
+    '.service-card, .project-item, .cert-card, .team-card, .testimonial-slide, .achievement-box'
+  );
+  revealTargets.forEach(el => el.classList.add('kr-reveal'));
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('kr-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealTargets.forEach(el => revealObserver.observe(el));
+  } else {
+    revealTargets.forEach(el => el.classList.add('kr-visible'));
+  }
+
+  /* ---------- 3. Efek ripple pada tombol utama ---------- */
+  const rippleButtons = document.querySelectorAll(
+    '.btn-primary, .btn-secondary, .btn-cta, .cta-container .btn, .cta-simple-btn'
+  );
+
+  rippleButtons.forEach(btn => {
+    btn.style.position = btn.style.position || 'relative';
+    btn.style.overflow = 'hidden';
+
+    btn.addEventListener('click', function (e) {
+      const rect = btn.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      const size = Math.max(rect.width, rect.height) * 1.6;
+
+      ripple.style.position = 'absolute';
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+      ripple.style.borderRadius = '50%';
+      ripple.style.background = 'rgba(255,255,255,0.45)';
+      ripple.style.pointerEvents = 'none';
+      ripple.style.transform = 'scale(0)';
+      ripple.style.transition = 'transform .6s ease, opacity .6s ease';
+      ripple.style.opacity = '1';
+
+      btn.appendChild(ripple);
+      requestAnimationFrame(() => {
+        ripple.style.transform = 'scale(1)';
+        ripple.style.opacity = '0';
+      });
+
+      setTimeout(() => ripple.remove(), 650);
+    });
+  });
+
+  /* ---------- 4. Parallax ringan pada gambar hero ---------- */
+  const heroImage = document.querySelector('.hero-image');
+  if (heroImage && window.matchMedia('(min-width: 992px)').matches) {
+    document.querySelector('.hero.section')?.addEventListener('mousemove', function (e) {
+      const rect = this.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+      const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+      heroImage.style.transform = `translate(${x * 10}px, ${y * 10}px)`;
+      heroImage.style.transition = 'transform .2s ease-out';
+    });
+  }
+
+});
+
+/* =======================================================
+   CUSTOM ENHANCE — Kontraktor Rumah
+   File JS tambahan (terpisah dari main.js) untuk:
+   1. Animasi angka statistik (count-up) saat terlihat di layar
+   2. Efek reveal halus saat scroll
+   3. Efek ripple pada tombol utama
+   4. Efek parallax ringan pada gambar hero
+   ======================================================= */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ---------- 1. Count-up angka statistik ---------- */
+  function animateCount(el) {
+    const raw = el.textContent.trim();
+    const match = raw.match(/^([^\d]*)(\d+)([^\d]*)$/);
+    if (!match) return;
+
+    const prefix = match[1];
+    const target = parseInt(match[2], 10);
+    const suffix = match[3];
+    const duration = 1400;
+    const startTime = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const current = Math.floor(eased * target);
+      el.textContent = prefix + current + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = prefix + target + suffix;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const countSelectors = [
+    '.badge-item .count',
+    '.achievement-box h3',
+    '.achievements-banner .achievement-item h3'
+  ];
+  const countEls = document.querySelectorAll(countSelectors.join(','));
+
+  if ('IntersectionObserver' in window && countEls.length) {
+    const countObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    countEls.forEach(el => countObserver.observe(el));
+  }
+
+  /* ---------- 2. Scroll reveal halus ---------- */
+  const revealTargets = document.querySelectorAll(
+    '.service-card, .project-item, .cert-card, .team-card, .testimonial-slide, .achievement-box'
+  );
+  revealTargets.forEach(el => el.classList.add('kr-reveal'));
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('kr-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealTargets.forEach(el => revealObserver.observe(el));
+  } else {
+    revealTargets.forEach(el => el.classList.add('kr-visible'));
+  }
+
+  /* ---------- 3. Efek ripple pada tombol utama ---------- */
+  const rippleButtons = document.querySelectorAll(
+    '.btn-primary, .btn-secondary, .btn-cta, .cta-container .btn, .cta-simple-btn'
+  );
+
+  rippleButtons.forEach(btn => {
+    btn.style.position = btn.style.position || 'relative';
+    btn.style.overflow = 'hidden';
+
+    btn.addEventListener('click', function (e) {
+      const rect = btn.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      const size = Math.max(rect.width, rect.height) * 1.6;
+
+      ripple.style.position = 'absolute';
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+      ripple.style.borderRadius = '50%';
+      ripple.style.background = 'rgba(255,255,255,0.45)';
+      ripple.style.pointerEvents = 'none';
+      ripple.style.transform = 'scale(0)';
+      ripple.style.transition = 'transform .6s ease, opacity .6s ease';
+      ripple.style.opacity = '1';
+
+      btn.appendChild(ripple);
+      requestAnimationFrame(() => {
+        ripple.style.transform = 'scale(1)';
+        ripple.style.opacity = '0';
+      });
+
+      setTimeout(() => ripple.remove(), 650);
+    });
+  });
+
+  /* ---------- 4. Parallax ringan pada gambar hero ---------- */
+  const heroImage = document.querySelector('.hero-image');
+  if (heroImage && window.matchMedia('(min-width: 992px)').matches) {
+    document.querySelector('.hero.section')?.addEventListener('mousemove', function (e) {
+      const rect = this.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+      const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+      heroImage.style.transform = `translate(${x * 10}px, ${y * 10}px)`;
+      heroImage.style.transition = 'transform .2s ease-out';
+    });
+  }
+
+});
