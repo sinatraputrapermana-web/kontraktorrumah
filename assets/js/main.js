@@ -702,3 +702,117 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+/* =======================================================
+   CUSTOM ENHANCE — Kontraktor Rumah
+   File JS tambahan (terpisah dari main.js) untuk:
+   1. Animasi angka statistik (count-up) saat terlihat di layar
+   2. Efek reveal halus saat scroll
+   3. Efek ripple pada tombol utama
+   ======================================================= */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ---------- 1. Count-up angka statistik ---------- */
+  function animateCount(el) {
+    const raw = el.textContent.trim();
+    const match = raw.match(/^([^\d]*)(\d+)([^\d]*)$/);
+    if (!match) return;
+
+    const prefix = match[1];
+    const target = parseInt(match[2], 10);
+    const suffix = match[3];
+    const duration = 1400;
+    const startTime = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const current = Math.floor(eased * target);
+      el.textContent = prefix + current + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = prefix + target + suffix;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const countSelectors = [
+    '.badge-item .count',
+    '.achievement-box h3',
+    '.achievements-banner .achievement-item h3'
+  ];
+  const countEls = document.querySelectorAll(countSelectors.join(','));
+
+  if ('IntersectionObserver' in window && countEls.length) {
+    const countObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    countEls.forEach(el => countObserver.observe(el));
+  }
+
+  /* ---------- 2. Scroll reveal halus ---------- */
+  const revealTargets = document.querySelectorAll(
+    '.service-card, .project-item, .cert-card, .team-card, .testimonial-slide, .achievement-box'
+  );
+  revealTargets.forEach(el => el.classList.add('kr-reveal'));
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('kr-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealTargets.forEach(el => revealObserver.observe(el));
+  } else {
+    revealTargets.forEach(el => el.classList.add('kr-visible'));
+  }
+
+  /* ---------- 3. Efek ripple pada tombol utama ---------- */
+  const rippleButtons = document.querySelectorAll(
+    '.btn-primary, .btn-secondary, .btn-cta, .cta-container .btn, .cta-simple-btn'
+  );
+
+  rippleButtons.forEach(btn => {
+    btn.style.position = btn.style.position || 'relative';
+    btn.style.overflow = 'hidden';
+
+    btn.addEventListener('click', function (e) {
+      const rect = btn.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      const size = Math.max(rect.width, rect.height) * 1.6;
+
+      ripple.style.position = 'absolute';
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+      ripple.style.borderRadius = '50%';
+      ripple.style.background = 'rgba(255,255,255,0.45)';
+      ripple.style.pointerEvents = 'none';
+      ripple.style.transform = 'scale(0)';
+      ripple.style.transition = 'transform .6s ease, opacity .6s ease';
+      ripple.style.opacity = '1';
+
+      btn.appendChild(ripple);
+      requestAnimationFrame(() => {
+        ripple.style.transform = 'scale(1)';
+        ripple.style.opacity = '0';
+      });
+
+      setTimeout(() => ripple.remove(), 650);
+    });
+  });
+
+});
