@@ -25,7 +25,7 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/main.css?v=5" rel="stylesheet">
   <link href="assets/css/whatsapp-float.css" rel="stylesheet">
   <link href="assets/css/scroll-top-round.css" rel="stylesheet">
 
@@ -43,22 +43,7 @@
 
 <body class="project-details-page">
 
-  <header id="header" class="header sticky-top">
-
-    <div class="topbar d-flex align-items-center dark-background">
-      <div class="container d-flex justify-content-center justify-content-md-between">
-        <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:kontraktorrumah@gmail.com">kontraktorrumah@gmail.com</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><span>088989643555</span></i>
-        </div>
-        <div class="social-links d-none d-md-flex align-items-center">
-          <a href="https://www.twitter.com/" class="twitter"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://www.facebook.com//" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.intagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        </div>
-      </div>
-    </div><!-- End Top Bar -->
+  <header id="header" class="header fixed-top">
 
     <div class="branding d-flex align-items-cente">
 
@@ -72,16 +57,57 @@
             <li><a href="/">Beranda</a></li>
             <li><a href="about.html">Tentang Kami</a></li>
             <li class="dropdown"><a href="services.html"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="jasa-arsitek.html">Jasa Arsitek</a></li>
-                <li><a href="jasa-kontraktor-rumah.html">Jasa Kontraktor Rumah</a></li>
-                <li><a href="jasa-kontraktor-bangunan.html">Jasa Kontraktor Bangunan</a></li>
-                <li><a href="jasa-renovasi-bangunan.html">Jasa Renovasi Bangunan</a></li>
-                <li><a href="jasa-desain-interior.html">Jasa Desain Interior</a></li>
+              <ul class="dropdown-bubble-menu">
+                <li>
+                  <a href="jasa-arsitek.html" class="dropdown-bubble-item">
+                    <span class="dropdown-bubble-icon"><i class="bi bi-pencil-square"></i></span>
+                    <span class="dropdown-bubble-text">
+                      <strong>Jasa Arsitek</strong>
+                      <small>Desain &amp; perencanaan arsitektur</small>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="jasa-kontraktor-rumah.html" class="dropdown-bubble-item">
+                    <span class="dropdown-bubble-icon"><i class="bi bi-house-door"></i></span>
+                    <span class="dropdown-bubble-text">
+                      <strong>Jasa Kontraktor Rumah</strong>
+                      <small>Pembangunan hunian profesional</small>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="jasa-kontraktor-bangunan.html" class="dropdown-bubble-item">
+                    <span class="dropdown-bubble-icon"><i class="bi bi-building"></i></span>
+                    <span class="dropdown-bubble-text">
+                      <strong>Jasa Kontraktor Bangunan</strong>
+                      <small>Ruko, kantor, kafe, gedung komersial</small>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="jasa-renovasi-bangunan.html" class="dropdown-bubble-item">
+                    <span class="dropdown-bubble-icon"><i class="bi bi-scissors"></i></span>
+                    <span class="dropdown-bubble-text">
+                      <strong>Jasa Renovasi Bangunan</strong>
+                      <small>Renovasi rumah &amp; bangunan</small>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="jasa-desain-interior.html" class="dropdown-bubble-item">
+                    <span class="dropdown-bubble-icon"><i class="bi bi-lightbulb"></i></span>
+                    <span class="dropdown-bubble-text">
+                      <strong>Jasa Desain Interior</strong>
+                      <small>Interior rumah, kantor &amp; komersial</small>
+                    </span>
+                  </a>
+                </li>
               </ul>
             </li>
-            <li><a href="galeri.html" class="active">Galeri</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
             <li><a href="blog.html">Blog</a></li>
+            <li><a href="https://wa.me/6288989643555" class="btn-hubungi-kami">Hubungi Kami</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -330,21 +356,22 @@
           </a>
           <p>Kami adalah kontraktor rumah tepercaya yang berdedikasi mewujudkan hunian berkualitas, nyaman, dan sesuai kebutuhan setiap keluarga.</p>
           <div class="social-links d-flex mt-4">
-            <a href="https://www.twitter.com/"><i class="bi bi-twitter-x"></i></a>
-            <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.istagram.com/"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.linkedin.com/"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.twitter.com/" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.facebook.com/" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.istagram.com/" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
           <h4>Tautan Berguna</h4>
           <ul>
-            <li><a href="index.html">Beranda</a></li>
+            <li><a href="/">Beranda</a></li>
             <li><a href="about.html">Tentang Kami</a></li>
             <li><a href="services.html">Layanan</a></li>
             <li><a href="galeri.html">Galeri</a></li>
             <li><a href="blog.html">Blog</a></li>
+            <li><a href="https://wa.me/6288989643555" class="btn-hubungi-kami">Hubungi Kami</a></li>
           </ul>
         </div>
 
