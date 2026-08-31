@@ -104,9 +104,15 @@
   </url>
   <url>
     <loc>https://kontraktorrumah.web.id/blog.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kontraktorrumah.web.id/desain-fasad-rumah-kayu-besi.html</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://kontraktorrumah.web.id/jasa-arsitek-rumah-3d-fotorealistik.html</loc>
@@ -117,6 +123,12 @@
   <url>
     <loc>https://kontraktorrumah.web.id/jasa-kontraktor-renovasi-rumah-jabodetabek.html</loc>
     <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kontraktorrumah.web.id/renovasi-atasi-bocor-retak.html</loc>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -195,6 +207,12 @@
   <url>
     <loc>https://kontraktorrumah.web.id/keuntungan-jasa-arsitek-gambar-3d.html</loc>
     <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kontraktorrumah.web.id/biaya-bangun-rumah-jabodetabek.html</loc>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
