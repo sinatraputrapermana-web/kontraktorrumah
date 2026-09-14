@@ -3,11 +3,22 @@
 
 <head>
   <meta charset="utf-8">
+  <script>
+  (function () {
+    var p = window.location.pathname;
+    if (p.indexOf('googleace') !== -1) return;
+    if (p === '/index.html') {
+      window.location.replace('/' + window.location.search + window.location.hash);
+    } else if (p.endsWith('.html')) {
+      window.location.replace(p.slice(0, -5) + window.location.search + window.location.hash);
+    }
+  })();
+  </script>  <!-- Clean URL redirect -->
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Jasa Kontraktor Renovasi Rumah Jabodetabek: Atasi Bocor & Retak Bergaransi</title>
   <meta name="description" content="Jasa kontraktor renovasi rumah Jabodetabek untuk atasi bocor dak & retak dinding struktural. Garansi tertulis, RAB transparan, tim insinyur sipil berpengalaman.">
   <meta name="keywords" content="jasa kontraktor renovasi rumah, kontraktor renovasi rumah jabodetabek, atasi rumah bocor, perbaikan dinding retak, renovasi rumah bergaransi">
-  <link rel="canonical" href="https://kontraktorrumah.web.id/jasa-kontraktor-renovasi-rumah-jabodetabek.html" />
+  <link rel="canonical" href="https://kontraktorrumah.web.id/jasa-kontraktor-renovasi-rumah-jabodetabek" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
@@ -305,25 +316,25 @@
 
     <div class="branding d-flex align-items-center">
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="/" class="logo d-flex align-items-center">
           <h1 class="sitename">Kontraktor Rumah</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="/">Beranda</a></li>
-            <li><a href="about.html">Tentang Kami</a></li>
-            <li class="dropdown"><a href="services.html"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <li><a href="about">Tentang Kami</a></li>
+            <li class="dropdown"><a href="services"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
-                <li><a href="jasa-arsitek.html">Jasa Arsitek</a></li>
-                <li><a href="jasa-kontraktor-rumah.html">Jasa Kontraktor Rumah</a></li>
-                <li><a href="jasa-kontraktor-bangunan.html">Jasa Kontraktor Bangunan</a></li>
-                <li><a href="jasa-renovasi-bangunan.html">Jasa Renovasi Bangunan</a></li>
-                <li><a href="jasa-desain-interior.html">Jasa Desain Interior</a></li>
+                <li><a href="jasa-arsitek">Jasa Arsitek</a></li>
+                <li><a href="jasa-kontraktor-rumah">Jasa Kontraktor Rumah</a></li>
+                <li><a href="jasa-kontraktor-bangunan">Jasa Kontraktor Bangunan</a></li>
+                <li><a href="jasa-renovasi-bangunan">Jasa Renovasi Bangunan</a></li>
+                <li><a href="jasa-desain-interior">Jasa Desain Interior</a></li>
               </ul>
             </li>
-            <li><a href="galeri.html">Galeri</a></li>
-            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="galeri">Galeri</a></li>
+            <li><a href="blog" class="active">Blog</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -339,8 +350,8 @@
         <h1 class="mb-2 mb-lg-0">Jasa Kontraktor Renovasi Rumah Jabodetabek</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="/">Beranda</a></li>
+            <li><a href="blog">Blog</a></li>
             <li class="current">Jasa Kontraktor Renovasi Rumah Jabodetabek</li>
           </ol>
         </nav>
@@ -405,7 +416,7 @@
               <p>Kontraktor Rumah membangun layanan di atas empat prinsip tersebut, menjadikan kami pilihan kontraktor renovasi rumah yang banyak direkomendasikan warga Jabodetabek untuk penanganan bocor dan retak.</p>
 
               <div class="read-also">
-                <i class="bi bi-arrow-right-circle-fill me-2" style="color: #1a4d87;"></i> <strong>Baca Juga:</strong> <a href="jasa-renovasi-bangunan.html">Jasa Renovasi Bangunan Kontraktor Rumah</a>
+                <i class="bi bi-arrow-right-circle-fill me-2" style="color: #1a4d87;"></i> <strong>Baca Juga:</strong> <a href="jasa-renovasi-bangunan">Jasa Renovasi Bangunan Kontraktor Rumah</a>
               </div>
 
               <h3 id="layanan-utama">2. Layanan Utama Kontraktor Renovasi Rumah dari Kontraktor Rumah</h3>
@@ -470,7 +481,7 @@
               </div>
 
               <div class="read-also">
-                <i class="bi bi-arrow-right-circle-fill me-2" style="color: #1a4d87;"></i> <strong>Baca Juga:</strong> <a href="jasa-kontraktor-rumah.html">Jasa Kontraktor Rumah</a>
+                <i class="bi bi-arrow-right-circle-fill me-2" style="color: #1a4d87;"></i> <strong>Baca Juga:</strong> <a href="jasa-kontraktor-rumah">Jasa Kontraktor Rumah</a>
               </div>
 
               <h3 id="proses-kerja">4. Proses Kerja Kontraktor Renovasi Rumah di Kontraktor Rumah</h3>
@@ -597,7 +608,7 @@
                   <img src="assets/img/blog/sop-bangun-rumah-pondasi-cakar-ayam-rab.webp" alt="SOP Bangun Rumah Baru dari Nol: Struktur Kuat, Bebas Bengkak Anggaran" loading="lazy">
                 </div>
                 <div class="blog-card-body">
-                  <h3><a href="sop-bangun-rumah-baru.html">SOP Bangun Rumah Baru dari Nol: Struktur Kuat, Bebas Bengkak Anggaran</a></h3>
+                  <h3><a href="sop-bangun-rumah-baru">SOP Bangun Rumah Baru dari Nol: Struktur Kuat, Bebas Bengkak Anggaran</a></h3>
                   <p class="text-muted mb-0" style="font-size: 0.9rem;">Membangun rumah baru yang kuat dan kokoh memerlukan SOP pengerjaan yang ketat, mulai dari survei tanah, RAB transparan, hingga struktur beton bertulang berstandar SNI.</p>
                 </div>
               </article>
@@ -609,7 +620,7 @@
                   <img src="assets/img/blog/rumah-minimalis-atap-limasan-mewah.webp" alt="Tren Desain Rumah Minimalis 2026: Lebih Hangat, Lebih Manusiawi" loading="lazy">
                 </div>
                 <div class="blog-card-body">
-                  <h3><a href="tren-desain-rumah-2026.html">Tren Desain Rumah Minimalis 2026: Lebih Hangat, Lebih Manusiawi</a></h3>
+                  <h3><a href="tren-desain-rumah-2026">Tren Desain Rumah Minimalis 2026: Lebih Hangat, Lebih Manusiawi</a></h3>
                   <p class="text-muted mb-0" style="font-size: 0.9rem;">Wajah minimalisme mulai berubah di 2026. Temukan tren desain rumah minimalis terbaru dengan sentuhan warna earthy, desain biofilik, dan kehangatan emosional.</p>
                 </div>
               </article>
@@ -621,7 +632,7 @@
                   <img src="assets/img/blog/minimalist-color-palette-mood-board.webp" alt="Warna Cat Rumah Minimalis Terpopuler dan Cocok" loading="lazy">
                 </div>
                 <div class="blog-card-body">
-                  <h3><a href="warna-cat-rumah-minimalis.html">Warna Cat Rumah Minimalis Terpopuler dan Cocok</a></h3>
+                  <h3><a href="warna-cat-rumah-minimalis">Warna Cat Rumah Minimalis Terpopuler dan Cocok</a></h3>
                   <p class="text-muted mb-0" style="font-size: 0.9rem;">Warna cat rumah minimalis yang paling populer adalah warna netral seperti putih, abu-abu, dan krem karena memberikan kesan bersih, luas, dan mudah dipadukan.</p>
                 </div>
               </article>
@@ -637,7 +648,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
+          <a href="/" class="logo d-flex align-items-center">
             <span class="sitename">Kontraktor Rumah</span>
           </a>
           <p>Kami adalah kontraktor rumah tepercaya yang berdedikasi mewujudkan hunian berkualitas, nyaman, dan sesuai kebutuhan setiap keluarga.</p>
@@ -652,22 +663,22 @@
         <div class="col-lg-2 col-6 footer-links">
           <h4>Tautan Berguna</h4>
           <ul>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="about.html">Tentang Kami</a></li>
-            <li><a href="services.html">Layanan</a></li>
-            <li><a href="galeri.html">Galeri</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="/">Beranda</a></li>
+            <li><a href="about">Tentang Kami</a></li>
+            <li><a href="services">Layanan</a></li>
+            <li><a href="galeri">Galeri</a></li>
+            <li><a href="blog">Blog</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
           <h4>Layanan Kami</h4>
           <ul>
-            <li><a href="jasa-arsitek.html">Jasa Arsitek</a></li>
-            <li><a href="jasa-kontraktor-rumah.html">Jasa Kontraktor Rumah</a></li>
-            <li><a href="jasa-kontraktor-bangunan.html">Jasa Kontraktor Bangunan</a></li>
-            <li><a href="jasa-renovasi-bangunan.html">Jasa Renovasi Bangunan</a></li>
-            <li><a href="jasa-desain-interior.html">Jasa Desain Interior</a></li>
+            <li><a href="jasa-arsitek">Jasa Arsitek</a></li>
+            <li><a href="jasa-kontraktor-rumah">Jasa Kontraktor Rumah</a></li>
+            <li><a href="jasa-kontraktor-bangunan">Jasa Kontraktor Bangunan</a></li>
+            <li><a href="jasa-renovasi-bangunan">Jasa Renovasi Bangunan</a></li>
+            <li><a href="jasa-desain-interior">Jasa Desain Interior</a></li>
           </ul>
         </div>
 

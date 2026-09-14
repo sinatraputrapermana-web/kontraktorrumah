@@ -3,6 +3,17 @@
 
 <head>
   <meta charset="utf-8">
+  <script>
+  (function () {
+    var p = window.location.pathname;
+    if (p.indexOf('googleace') !== -1) return;
+    if (p === '/index.html') {
+      window.location.replace('/' + window.location.search + window.location.hash);
+    } else if (p.endsWith('.html')) {
+      window.location.replace(p.slice(0, -5) + window.location.search + window.location.hash);
+    }
+  })();
+  </script>  <!-- Clean URL redirect -->
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Kontraktor Rumah</title>
   <meta name="description" content="Kontraktor Rumah adalah jasa kontraktor bangunan dan rumah terpercaya di Malang, berpengalaman sejak 2008. Melayani pembangunan rumah baru, renovasi, hingga desain interior dengan kualitas terjamin dan tepat waktu.">
@@ -42,7 +53,7 @@
     <div class="branding d-flex align-items-cente">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="/" class="logo d-flex align-items-center">
           <img src="assets/img/logo.png" alt="Kontraktor Rumah" class="logo-img" width="46" height="46">
           <h1 class="sitename">Kontraktor Rumah</h1>
         </a>
@@ -50,11 +61,11 @@
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="/" class="active">Beranda</a></li>
-            <li><a href="about.html">Tentang Kami</a></li>
-            <li class="dropdown"><a href="services.html"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <li><a href="about">Tentang Kami</a></li>
+            <li class="dropdown"><a href="services"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul class="dropdown-bubble-menu">
                 <li>
-                  <a href="jasa-arsitek.html" class="dropdown-bubble-item">
+                  <a href="jasa-arsitek" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-pencil-square"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Arsitek</strong>
@@ -63,7 +74,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="jasa-kontraktor-rumah.html" class="dropdown-bubble-item">
+                  <a href="jasa-kontraktor-rumah" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-house-door"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Kontraktor Rumah</strong>
@@ -72,7 +83,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="jasa-kontraktor-bangunan.html" class="dropdown-bubble-item">
+                  <a href="jasa-kontraktor-bangunan" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-building"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Kontraktor Bangunan</strong>
@@ -81,7 +92,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="jasa-renovasi-bangunan.html" class="dropdown-bubble-item">
+                  <a href="jasa-renovasi-bangunan" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-scissors"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Renovasi Bangunan</strong>
@@ -90,7 +101,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="jasa-desain-interior.html" class="dropdown-bubble-item">
+                  <a href="jasa-desain-interior" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-lightbulb"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Desain Interior</strong>
@@ -100,8 +111,8 @@
                 </li>
               </ul>
             </li>
-            <li><a href="galeri.html">Galeri</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="galeri">Galeri</a></li>
+            <li><a href="blog">Blog</a></li>
             <li><a href="https://wa.me/6288989643555" class="btn-hubungi-kami">Hubungi Kami</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -129,7 +140,7 @@
 
               <div class="hero-buttons">
                 <a href="https://wa.me/6288989643555" class="btn-primary">Minta Penawaran</a>
-                <a href="galeri.html" class="btn-secondary">Proyek Kami</a>
+                <a href="galeri" class="btn-secondary">Proyek Kami</a>
               </div>
 
               <div class="trust-badges">
@@ -213,7 +224,7 @@
               </div>
 
               <div class="cta-container mt-5" data-aos="fade-up" data-aos-delay="800">
-                <a href="about.html" class="btn btn-primary">Selengkapnya Tentang Kami</a>
+                <a href="about" class="btn btn-primary">Selengkapnya Tentang Kami</a>
               </div>
             </div>
           </div>
@@ -260,7 +271,7 @@
                 <span><i class="bi bi-check-circle"></i> Rumah Tapak</span>
                 <span><i class="bi bi-check-circle"></i> Rumah Dua Lantai</span>
               </div>
-              <a href="service-details.html" class="service-link">Selengkapnya <i class="bi bi-arrow-right"></i></a>
+              <a href="service-details" class="service-link">Selengkapnya <i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
 
@@ -277,7 +288,7 @@
                 <span><i class="bi bi-check-circle"></i> Renovasi Kamar Mandi</span>
                 <span><i class="bi bi-check-circle"></i> Penambahan Ruangan</span>
               </div>
-              <a href="jasa-renovasi-bangunan.html" class="service-link">Selengkapnya <i class="bi bi-arrow-right"></i></a>
+              <a href="jasa-renovasi-bangunan" class="service-link">Selengkapnya <i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
 
@@ -293,7 +304,7 @@
                 <span><i class="bi bi-check-circle"></i> Instalasi Listrik</span>
                 <span><i class="bi bi-check-circle"></i> Perbaikan Plumbing</span>
               </div>
-              <a href="service-details.html" class="service-link">Selengkapnya <i class="bi bi-arrow-right"></i></a>
+              <a href="service-details" class="service-link">Selengkapnya <i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
         </div>
@@ -394,7 +405,7 @@
                   <span>Malang, Jawa Timur</span>
                 </div>
               </div>
-              <a href="proyek-rumah-modern-minimalis-grand-regency.html" class="project-link">
+              <a href="proyek-rumah-modern-minimalis-grand-regency" class="project-link">
                 <span>Lihat Proyek</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -433,7 +444,7 @@
                   <span>Surabaya, Jawa Timur</span>
                 </div>
               </div>
-              <a href="proyek-renovasi-rumah-klasik-riverside.html" class="project-link">
+              <a href="proyek-renovasi-rumah-klasik-riverside" class="project-link">
                 <span>Lihat Proyek</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -472,7 +483,7 @@
                   <span>Jakarta Selatan, DKI Jakarta</span>
                 </div>
               </div>
-              <a href="proyek-perumahan-cluster-harmoni-residence.html" class="project-link">
+              <a href="proyek-perumahan-cluster-harmoni-residence" class="project-link">
                 <span>Lihat Proyek</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -511,7 +522,7 @@
                   <span>Batu, Jawa Timur</span>
                 </div>
               </div>
-              <a href="proyek-perluasan-ruang-keluarga-sejahtera.html" class="project-link">
+              <a href="proyek-perluasan-ruang-keluarga-sejahtera" class="project-link">
                 <span>Lihat Proyek</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -855,7 +866,7 @@
                 <img loading="lazy" decoding="async" src="assets/img/blog/pengawasan-struktur-bangunan-kontraktor-rumah.webp" alt="Panduan Kerja Jasa Kontraktor Rumah" class="img-fluid" style="width: 100%; height: 240px; object-fit: cover;">
               </div>
               <div class="blog-card-body" style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
-                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"><a href="panduan-jasa-kontraktor-rumah.html" style="color: var(--kr-navy); text-decoration: none;">Panduan Kerja Jasa Kontraktor Rumah Tinggal dari Tahap Awal</a></h3>
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"><a href="panduan-jasa-kontraktor-rumah" style="color: var(--kr-navy); text-decoration: none;">Panduan Kerja Jasa Kontraktor Rumah Tinggal dari Tahap Awal</a></h3>
                 <p style="color: #666; font-size: 14px; margin-bottom: 20px; flex-grow: 1;">SOP kerja jasa kontraktor rumah dari survey, DED, RAB, SPKK, eksekusi fisik, hingga opname &amp; serah terima kunci.</p>
                 <div class="post-meta" style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #eee; padding-top: 15px;">
                   <div style="display: flex; align-items: center;">
@@ -865,7 +876,7 @@
                       <span style="font-size: 12px; color: #999;">26 Agu 2026</span>
                     </div>
                   </div>
-                  <a href="panduan-jasa-kontraktor-rumah.html" style="color: var(--kr-primary); font-size: 20px;"><i class="bi bi-arrow-right-circle-fill"></i></a>
+                  <a href="panduan-jasa-kontraktor-rumah" style="color: var(--kr-primary); font-size: 20px;"><i class="bi bi-arrow-right-circle-fill"></i></a>
                 </div>
               </div>
             </article>
@@ -878,7 +889,7 @@
                 <img loading="lazy" decoding="async" src="assets/img/blog/skema-perhitungan-harga-borongan-rumah-jasa-material.webp" alt="Skema Perhitungan Harga" class="img-fluid" style="width: 100%; height: 240px; object-fit: cover;">
               </div>
               <div class="blog-card-body" style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
-                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"><a href="harga-borongan-bangun-rumah-m2.html" style="color: var(--kr-navy); text-decoration: none;">Skema Perhitungan Harga Borongan Bangun Rumah Jasa &amp; Material</a></h3>
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"><a href="harga-borongan-bangun-rumah-m2" style="color: var(--kr-navy); text-decoration: none;">Skema Perhitungan Harga Borongan Bangun Rumah Jasa &amp; Material</a></h3>
                 <p style="color: #666; font-size: 14px; margin-bottom: 20px; flex-grow: 1;">Bongkar skema harga borongan bangun rumah per m² di Jabodetabek 2026: rincian biaya, matriks kelas material, dan simulasi RAB.</p>
                 <div class="post-meta" style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #eee; padding-top: 15px;">
                   <div style="display: flex; align-items: center;">
@@ -888,7 +899,7 @@
                       <span style="font-size: 12px; color: #999;">26 Agu 2026</span>
                     </div>
                   </div>
-                  <a href="harga-borongan-bangun-rumah-m2.html" style="color: var(--kr-primary); font-size: 20px;"><i class="bi bi-arrow-right-circle-fill"></i></a>
+                  <a href="harga-borongan-bangun-rumah-m2" style="color: var(--kr-primary); font-size: 20px;"><i class="bi bi-arrow-right-circle-fill"></i></a>
                 </div>
               </div>
             </article>
@@ -901,7 +912,7 @@
                 <img loading="lazy" decoding="async" src="assets/img/blog/desain-interior-rumah-modern-minimalis-open-space.webp" alt="Tips Desain Interior Rumah" class="img-fluid" style="width: 100%; height: 240px; object-fit: cover;">
               </div>
               <div class="blog-card-body" style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
-                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"><a href="desain-interior-rumah-modern.html" style="color: var(--kr-navy); text-decoration: none;">Tips Desain Interior Rumah Modern Minimalis Konsep Open Space</a></h3>
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;"><a href="desain-interior-rumah-modern" style="color: var(--kr-navy); text-decoration: none;">Tips Desain Interior Rumah Modern Minimalis Konsep Open Space</a></h3>
                 <p style="color: #666; font-size: 14px; margin-bottom: 20px; flex-grow: 1;">Panduan desain interior rumah modern minimalis konsep open space: palet warna, furniture multifungsi, hingga strategi cross-ventilation.</p>
                 <div class="post-meta" style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #eee; padding-top: 15px;">
                   <div style="display: flex; align-items: center;">
@@ -911,7 +922,7 @@
                       <span style="font-size: 12px; color: #999;">26 Agu 2026</span>
                     </div>
                   </div>
-                  <a href="desain-interior-rumah-modern.html" style="color: var(--kr-primary); font-size: 20px;"><i class="bi bi-arrow-right-circle-fill"></i></a>
+                  <a href="desain-interior-rumah-modern" style="color: var(--kr-primary); font-size: 20px;"><i class="bi bi-arrow-right-circle-fill"></i></a>
                 </div>
               </div>
             </article>
@@ -921,7 +932,7 @@
       </div>
       
       <div class="container text-center mt-5" data-aos="fade-up" data-aos-delay="400">
-          <a href="blog.html" class="btn btn-outline-primary" style="border-radius: 20px; padding: 10px 30px;">Lihat Semua Artikel</a>
+          <a href="blog" class="btn btn-outline-primary" style="border-radius: 20px; padding: 10px 30px;">Lihat Semua Artikel</a>
       </div>
 
     </section><!-- /Recent Blog Posts Section -->
@@ -959,7 +970,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
+          <a href="/" class="logo d-flex align-items-center">
             <span class="sitename">Kontraktor Rumah</span>
           </a>
           <p>Kami adalah kontraktor rumah tepercaya yang berdedikasi mewujudkan hunian berkualitas, nyaman, dan sesuai kebutuhan setiap keluarga.</p>
@@ -975,10 +986,10 @@
           <h4>Tautan Berguna</h4>
           <ul>
             <li><a href="/">Beranda</a></li>
-            <li><a href="about.html">Tentang Kami</a></li>
-            <li><a href="services.html">Layanan</a></li>
-            <li><a href="galeri.html">Galeri</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about">Tentang Kami</a></li>
+            <li><a href="services">Layanan</a></li>
+            <li><a href="galeri">Galeri</a></li>
+            <li><a href="blog">Blog</a></li>
             <li><a href="https://wa.me/6288989643555" class="btn-hubungi-kami">Hubungi Kami</a></li>
           </ul>
         </div>
@@ -986,11 +997,11 @@
         <div class="col-lg-2 col-6 footer-links">
           <h4>Layanan Kami</h4>
           <ul>
-            <li><a href="jasa-arsitek.html">Jasa Arsitek</a></li>
-              <li><a href="jasa-kontraktor-rumah.html">Jasa Kontraktor Rumah</a></li>
-              <li><a href="jasa-kontraktor-bangunan.html">Jasa Kontraktor Bangunan</a></li>
-              <li><a href="jasa-renovasi-bangunan.html">Jasa Renovasi Bangunan</a></li>
-              <li><a href="jasa-desain-interior.html">Jasa Desain Interior</a></li>
+            <li><a href="jasa-arsitek">Jasa Arsitek</a></li>
+              <li><a href="jasa-kontraktor-rumah">Jasa Kontraktor Rumah</a></li>
+              <li><a href="jasa-kontraktor-bangunan">Jasa Kontraktor Bangunan</a></li>
+              <li><a href="jasa-renovasi-bangunan">Jasa Renovasi Bangunan</a></li>
+              <li><a href="jasa-desain-interior">Jasa Desain Interior</a></li>
           </ul>
         </div>
 

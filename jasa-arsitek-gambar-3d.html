@@ -3,12 +3,23 @@
 
 <head>
   <meta charset="utf-8">
+  <script>
+  (function () {
+    var p = window.location.pathname;
+    if (p.indexOf('googleace') !== -1) return;
+    if (p === '/index.html') {
+      window.location.replace('/' + window.location.search + window.location.hash);
+    } else if (p.endsWith('.html')) {
+      window.location.replace(p.slice(0, -5) + window.location.search + window.location.hash);
+    }
+  })();
+  </script>  <!-- Clean URL redirect -->
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Keuntungan Menggunakan Jasa Arsitek Rumah untuk Gambar 3D | Kontraktor Rumah</title>
   <meta name="description" content="Keuntungan jasa arsitek rumah untuk gambar 3D: minim kesalahan desain, efisiensi biaya, komunikasi lancar dengan kontraktor, hingga kisaran biayanya.">
   <meta name="keywords" content="jasa arsitek rumah gambar 3D, keuntungan gambar 3D rumah, biaya jasa arsitek 3D, visualisasi desain rumah, jasa arsitek rumah">
   <meta name="robots" content="index, follow">
-  <link href="https://kontraktorrumah.web.id/jasa-arsitek-gambar-3d.html" rel="canonical">
+  <link href="https://kontraktorrumah.web.id/jasa-arsitek-gambar-3d" rel="canonical">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -174,7 +185,7 @@
     <div class="branding d-flex align-items-cente">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="/" class="logo d-flex align-items-center">
           <img src="assets/img/logo.png" alt="Kontraktor Rumah" class="logo-img" width="46" height="46">
           <h1 class="sitename">Kontraktor Rumah</h1>
         </a>
@@ -182,11 +193,11 @@
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="/">Beranda</a></li>
-            <li><a href="about.html">Tentang Kami</a></li>
-            <li class="dropdown"><a href="services.html"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <li><a href="about">Tentang Kami</a></li>
+            <li class="dropdown"><a href="services"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul class="dropdown-bubble-menu">
                 <li>
-                  <a href="jasa-arsitek.html" class="dropdown-bubble-item">
+                  <a href="jasa-arsitek" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-pencil-square"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Arsitek</strong>
@@ -195,7 +206,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="jasa-kontraktor-rumah.html" class="dropdown-bubble-item">
+                  <a href="jasa-kontraktor-rumah" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-house-door"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Kontraktor Rumah</strong>
@@ -204,7 +215,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="jasa-kontraktor-bangunan.html" class="dropdown-bubble-item">
+                  <a href="jasa-kontraktor-bangunan" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-building"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Kontraktor Bangunan</strong>
@@ -213,7 +224,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="jasa-renovasi-bangunan.html" class="dropdown-bubble-item">
+                  <a href="jasa-renovasi-bangunan" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-scissors"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Renovasi Bangunan</strong>
@@ -222,7 +233,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="jasa-desain-interior.html" class="dropdown-bubble-item">
+                  <a href="jasa-desain-interior" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-lightbulb"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Desain Interior</strong>
@@ -232,8 +243,8 @@
                 </li>
               </ul>
             </li>
-            <li><a href="galeri.html">Galeri</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="galeri">Galeri</a></li>
+            <li><a href="blog">Blog</a></li>
             <li><a href="https://wa.me/6288989643555" class="btn-hubungi-kami">Hubungi Kami</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -253,8 +264,8 @@
         <h1 class="mb-2 mb-lg-0">Blog</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="/">Beranda</a></li>
+            <li><a href="blog">Blog</a></li>
             <li class="current">Keuntungan Menggunakan Jasa Arsitek Rumah untuk Gambar 3D</li>
           </ol>
         </nav>
@@ -335,7 +346,7 @@
             <div class="baca-juga-box">
               <div class="baca-juga-label"><i class="bi bi-bookmark-star-fill"></i> Baca Juga</div>
               <ul>
-                <li><a href="renovasi-ruko-jadi-kantor.html"><i class="bi bi-arrow-right-short"></i> Panduan Jasa Renovasi Ruko Menjadi Kantor Minimalis Modern</a></li>
+                <li><a href="renovasi-ruko-jadi-kantor"><i class="bi bi-arrow-right-short"></i> Panduan Jasa Renovasi Ruko Menjadi Kantor Minimalis Modern</a></li>
               </ul>
             </div>
 
@@ -347,7 +358,7 @@
             <div class="baca-juga-box">
               <div class="baca-juga-label"><i class="bi bi-bookmark-star-fill"></i> Baca Juga</div>
               <ul>
-                <li><a href="kontraktor-pt-vs-pemborong.html"><i class="bi bi-arrow-right-short"></i> Perbedaan Kontraktor PT vs Pemborong Biasa: Analisis Keamanan</a></li>
+                <li><a href="kontraktor-pt-vs-pemborong"><i class="bi bi-arrow-right-short"></i> Perbedaan Kontraktor PT vs Pemborong Biasa: Analisis Keamanan</a></li>
               </ul>
             </div>
 
@@ -465,7 +476,7 @@
                   alt="Panduan Jasa Renovasi Ruko Menjadi Kantor Minimalis Modern">
               </div>
               <div class="blog-card-body">
-                <h3><a href="renovasi-ruko-jadi-kantor.html">Panduan Jasa Renovasi Ruko Menjadi Kantor Minimalis Modern</a></h3>
+                <h3><a href="renovasi-ruko-jadi-kantor">Panduan Jasa Renovasi Ruko Menjadi Kantor Minimalis Modern</a></h3>
                 <p>Panduan jasa renovasi ruko menjadi kantor minimalis modern: tahapan kerja, konsep desain, estimasi biaya, hingga izin perubahan fungsi bangunan.</p>
                 <div class="post-meta">
                   <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
@@ -474,7 +485,7 @@
                     <span class="post-date-read">28 Agustus 2026 &middot; 8 Menit</span>
                   </div>
                 </div>
-                <a href="renovasi-ruko-jadi-kantor.html" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                <a href="renovasi-ruko-jadi-kantor" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
               </div>
             </article>
 
@@ -485,7 +496,7 @@
                   alt="Perbedaan Kontraktor PT vs Pemborong Biasa: Analisis Keamanan">
               </div>
               <div class="blog-card-body">
-                <h3><a href="kontraktor-pt-vs-pemborong.html">Perbedaan Kontraktor PT vs Pemborong Biasa: Analisis Keamanan</a></h3>
+                <h3><a href="kontraktor-pt-vs-pemborong">Perbedaan Kontraktor PT vs Pemborong Biasa: Analisis Keamanan</a></h3>
                 <p>Perbedaan kontraktor PT dan pemborong biasa dari sisi legalitas, keamanan hukum, garansi, hingga biaya. Panduan memilih mitra bangun yang tepat.</p>
                 <div class="post-meta">
                   <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
@@ -494,7 +505,7 @@
                     <span class="post-date-read">28 Agustus 2026 &middot; 10 Menit</span>
                   </div>
                 </div>
-                <a href="kontraktor-pt-vs-pemborong.html" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                <a href="kontraktor-pt-vs-pemborong" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
               </div>
             </article>
 
@@ -505,7 +516,7 @@
                   alt="Langkah Efektif Tahapan Renovasi Rumah Tanpa Pindah Hunian">
               </div>
               <div class="blog-card-body">
-                <h3><a href="renovasi-tanpa-pindah-hunian.html">Langkah Efektif Tahapan Renovasi Rumah Tanpa Pindah Hunian</a></h3>
+                <h3><a href="renovasi-tanpa-pindah-hunian">Langkah Efektif Tahapan Renovasi Rumah Tanpa Pindah Hunian</a></h3>
                 <p>Panduan tahapan renovasi rumah tanpa pindah hunian: sekat anti debu, pengerjaan area basah bertahap, gudang material, hingga pemilihan tukang tertib.</p>
                 <div class="post-meta">
                   <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
@@ -514,7 +525,7 @@
                     <span class="post-date-read">27 Agustus 2026 &middot; 9 Menit</span>
                   </div>
                 </div>
-                <a href="renovasi-tanpa-pindah-hunian.html" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                <a href="renovasi-tanpa-pindah-hunian" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
               </div>
             </article>
 
@@ -533,7 +544,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
+          <a href="/" class="logo d-flex align-items-center">
             <span class="sitename">Kontraktor Rumah</span>
           </a>
           <p>Kami adalah kontraktor rumah tepercaya yang berdedikasi mewujudkan hunian berkualitas, nyaman, dan sesuai kebutuhan setiap keluarga.</p>
@@ -549,10 +560,10 @@
           <h4>Tautan Berguna</h4>
           <ul>
             <li><a href="/">Beranda</a></li>
-            <li><a href="about.html">Tentang Kami</a></li>
-            <li><a href="services.html">Layanan</a></li>
-            <li><a href="galeri.html">Galeri</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about">Tentang Kami</a></li>
+            <li><a href="services">Layanan</a></li>
+            <li><a href="galeri">Galeri</a></li>
+            <li><a href="blog">Blog</a></li>
             <li><a href="https://wa.me/6288989643555" class="btn-hubungi-kami">Hubungi Kami</a></li>
           </ul>
         </div>
@@ -560,11 +571,11 @@
         <div class="col-lg-2 col-6 footer-links">
           <h4>Layanan Kami</h4>
           <ul>
-            <li><a href="jasa-arsitek.html">Jasa Arsitek</a></li>
-              <li><a href="jasa-kontraktor-rumah.html">Jasa Kontraktor Rumah</a></li>
-              <li><a href="jasa-kontraktor-bangunan.html">Jasa Kontraktor Bangunan</a></li>
-              <li><a href="jasa-renovasi-bangunan.html">Jasa Renovasi Bangunan</a></li>
-              <li><a href="jasa-desain-interior.html">Jasa Desain Interior</a></li>
+            <li><a href="jasa-arsitek">Jasa Arsitek</a></li>
+              <li><a href="jasa-kontraktor-rumah">Jasa Kontraktor Rumah</a></li>
+              <li><a href="jasa-kontraktor-bangunan">Jasa Kontraktor Bangunan</a></li>
+              <li><a href="jasa-renovasi-bangunan">Jasa Renovasi Bangunan</a></li>
+              <li><a href="jasa-desain-interior">Jasa Desain Interior</a></li>
           </ul>
         </div>
 
