@@ -3,12 +3,23 @@
 
 <head>
   <meta charset="utf-8">
+  <script>
+  (function () {
+    var p = window.location.pathname;
+    if (p.indexOf('googleace') !== -1) return;
+    if (p === '/index.html') {
+      window.location.replace('/' + window.location.search + window.location.hash);
+    } else if (p.endsWith('.html')) {
+      window.location.replace(p.slice(0, -5) + window.location.search + window.location.hash);
+    }
+  })();
+  </script>  <!-- Clean URL redirect -->
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Estimasi Biaya Renovasi Rumah 1 Lantai Menjadi 2 Lantai - Kontraktor Rumah</title>
   <meta name="description" content="Simak estimasi biaya renovasi rumah 1 lantai menjadi 2 lantai per meter persegi, cara menghindari risiko pondasi ambles, serta pentingnya sondir tanah sebelum konstruksi.">
   <meta name="keywords" content="biaya renovasi rumah 2 lantai, renovasi rumah 1 lantai jadi 2 lantai, estimasi biaya tambah lantai rumah, sondir tanah, pondasi rumah tingkat">
   <meta name="robots" content="index, follow">
-  <link href="https://kontraktorrumah.web.id/tahapan-renovasi-rumah-yang-aman.html" rel="canonical">
+  <link href="https://kontraktorrumah.web.id/tahapan-renovasi-rumah-yang-aman" rel="canonical">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -188,7 +199,7 @@
     <div class="branding d-flex align-items-cente">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="/" class="logo d-flex align-items-center">
           <img src="assets/img/logo.png" alt="Kontraktor Rumah" class="logo-img" width="46" height="46">
           <h1 class="sitename">Kontraktor Rumah</h1>
         </a>
@@ -196,12 +207,12 @@
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="/">Beranda</a></li>
-            <li><a href="about.html">Tentang Kami</a></li>
-            <li class="dropdown"><a href="services.html"><span>Layanan</span> <i
+            <li><a href="about">Tentang Kami</a></li>
+            <li class="dropdown"><a href="services"><span>Layanan</span> <i
                   class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul class="dropdown-bubble-menu">
                 <li>
-                  <a href="jasa-arsitek.html" class="dropdown-bubble-item">
+                  <a href="jasa-arsitek" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-pencil-square"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Arsitek</strong>
@@ -210,7 +221,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="jasa-kontraktor-rumah.html" class="dropdown-bubble-item">
+                  <a href="jasa-kontraktor-rumah" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-house-door"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Kontraktor Rumah</strong>
@@ -219,7 +230,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="jasa-kontraktor-bangunan.html" class="dropdown-bubble-item">
+                  <a href="jasa-kontraktor-bangunan" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-building"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Kontraktor Bangunan</strong>
@@ -228,7 +239,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="jasa-renovasi-bangunan.html" class="dropdown-bubble-item">
+                  <a href="jasa-renovasi-bangunan" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-scissors"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Renovasi Bangunan</strong>
@@ -237,7 +248,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="jasa-desain-interior.html" class="dropdown-bubble-item">
+                  <a href="jasa-desain-interior" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-lightbulb"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Desain Interior</strong>
@@ -247,8 +258,8 @@
                 </li>
               </ul>
             </li>
-            <li><a href="galeri.html">Galeri</a></li>
-            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="galeri">Galeri</a></li>
+            <li><a href="blog" class="active">Blog</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -267,8 +278,8 @@
         <h1 class="mb-2 mb-lg-0">Blog</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="/">Beranda</a></li>
+            <li><a href="blog">Blog</a></li>
             <li class="current">Estimasi Biaya Renovasi Rumah 1 Lantai Menjadi 2 Lantai</li>
           </ol>
         </nav>
@@ -389,7 +400,7 @@
             <div class="baca-juga-box">
               <div class="baca-juga-label"><i class="bi bi-bookmark-star-fill"></i> Baca Juga</div>
               <ul>
-                <li><a href="jasa-kontraktor-renovasi-rumah-jabodetabek.html"><i class="bi bi-arrow-right-short"></i> Jasa Kontraktor Renovasi Rumah: Atasi Bocor &amp; Retak Bergaransi</a></li>
+                <li><a href="jasa-kontraktor-renovasi-rumah-jabodetabek"><i class="bi bi-arrow-right-short"></i> Jasa Kontraktor Renovasi Rumah: Atasi Bocor &amp; Retak Bergaransi</a></li>
               </ul>
             </div>
 
@@ -406,7 +417,7 @@
             <div class="baca-juga-box">
               <div class="baca-juga-label"><i class="bi bi-bookmark-star-fill"></i> Baca Juga</div>
               <ul>
-                <li><a href="sop-bangun-rumah-baru.html"><i class="bi bi-arrow-right-short"></i> SOP Bangun Rumah Baru yang Wajib Diketahui Sebelum Konstruksi</a></li>
+                <li><a href="sop-bangun-rumah-baru"><i class="bi bi-arrow-right-short"></i> SOP Bangun Rumah Baru yang Wajib Diketahui Sebelum Konstruksi</a></li>
               </ul>
             </div>
 
@@ -414,7 +425,7 @@
             <p>Menangani renovasi tingkat dengan kontraktor yang berpengalaman memberi ketenangan tersendiri bagi pemilik rumah. Tim yang profesional tidak hanya mengerjakan sisi konstruksi, tetapi juga melakukan perhitungan struktur yang tepat sejak awal, sehingga potensi masalah seperti retak dinding atau penurunan pondasi bisa diantisipasi sebelum terjadi. Selain itu, pengawasan lapangan yang konsisten memastikan setiap tahapan, mulai dari pengecoran kolom hingga pemasangan atap, sesuai dengan gambar kerja dan standar keamanan yang berlaku.</p>
 
             <h2 id="cara-konsultasi">Cara Meminta Estimasi Biaya &amp; Konsultasi Struktur Gratis</h2>
-            <p>Setiap rumah memiliki kondisi tanah, struktur, dan kebutuhan yang berbeda, sehingga angka pada tabel di atas hanya berfungsi sebagai gambaran awal. Untuk mendapatkan perhitungan yang sesuai dengan kondisi rumah Anda, tim Kontraktor Rumah menyediakan layanan konsultasi struktur gratis sebelum proyek dimulai. Anda cukup menghubungi tim kami melalui WhatsApp di <a href="https://wa.me/6288989643555" target="_blank" rel="noopener">088989643555</a> untuk menjadwalkan survei lokasi, atau mengunjungi <a href="index.html">kontraktorrumah.web.id</a> untuk melihat portofolio proyek renovasi tingkat yang sudah kami kerjakan.</p>
+            <p>Setiap rumah memiliki kondisi tanah, struktur, dan kebutuhan yang berbeda, sehingga angka pada tabel di atas hanya berfungsi sebagai gambaran awal. Untuk mendapatkan perhitungan yang sesuai dengan kondisi rumah Anda, tim Kontraktor Rumah menyediakan layanan konsultasi struktur gratis sebelum proyek dimulai. Anda cukup menghubungi tim kami melalui WhatsApp di <a href="https://wa.me/6288989643555" target="_blank" rel="noopener">088989643555</a> untuk menjadwalkan survei lokasi, atau mengunjungi <a href="/">kontraktorrumah.web.id</a> untuk melihat portofolio proyek renovasi tingkat yang sudah kami kerjakan.</p>
             <p>Kontraktor Rumah melayani area Malang dan sekitarnya secara menyeluruh. Tim kami akan datang langsung ke lokasi untuk melakukan pengecekan kondisi pondasi eksisting, mengukur luas bangunan, serta mendiskusikan spesifikasi material yang sesuai dengan anggaran Anda. Sebagai bentuk komitmen terhadap kualitas pekerjaan, setiap proyek yang selesai serah terima juga dilengkapi dengan garansi pemeliharaan tertulis selama minimal 3 bulan, sehingga jika ada kendala pasca-konstruksi, tim kami siap menanganinya tanpa biaya tambahan.</p>
 
             <h2 id="faq">FAQ Seputar Biaya Renovasi Rumah Tingkat</h2>
@@ -518,7 +529,7 @@
                   alt="Jasa Kontraktor Renovasi Rumah: Atasi Bocor &amp; Retak Bergaransi">
               </div>
               <div class="blog-card-body">
-                <h3><a href="jasa-kontraktor-renovasi-rumah-jabodetabek.html">Jasa Kontraktor Renovasi Rumah: Atasi Bocor &amp; Retak Bergaransi</a></h3>
+                <h3><a href="jasa-kontraktor-renovasi-rumah-jabodetabek">Jasa Kontraktor Renovasi Rumah: Atasi Bocor &amp; Retak Bergaransi</a></h3>
                 <p>Jasa kontraktor renovasi rumah untuk atasi bocor dak &amp; retak dinding struktural. Garansi tertulis, RAB transparan, tim insinyur sipil berpengalaman.</p>
                 <div class="post-meta">
                   <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
@@ -527,7 +538,7 @@
                     <span class="post-date-read">22 Agustus 2026 &middot; 8 Menit</span>
                   </div>
                 </div>
-                <a href="jasa-kontraktor-renovasi-rumah-jabodetabek.html" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                <a href="jasa-kontraktor-renovasi-rumah-jabodetabek" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
               </div>
             </article>
 
@@ -538,7 +549,7 @@
                   alt="SOP Bangun Rumah Baru yang Wajib Diketahui">
               </div>
               <div class="blog-card-body">
-                <h3><a href="sop-bangun-rumah-baru.html">SOP Bangun Rumah Baru yang Wajib Diketahui Sebelum Konstruksi</a></h3>
+                <h3><a href="sop-bangun-rumah-baru">SOP Bangun Rumah Baru yang Wajib Diketahui Sebelum Konstruksi</a></h3>
                 <p>Pahami tahapan standar operasional prosedur membangun rumah baru agar proyek berjalan tepat waktu dan sesuai anggaran.</p>
                 <div class="post-meta">
                   <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
@@ -547,7 +558,7 @@
                     <span class="post-date-read">22 Agustus 2026 &middot; 7 Menit</span>
                   </div>
                 </div>
-                <a href="sop-bangun-rumah-baru.html" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                <a href="sop-bangun-rumah-baru" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
               </div>
             </article>
 
@@ -559,7 +570,7 @@
                   alt="Keuntungan Jasa Arsitek Rumah: Wujudkan Gambar 3D Fotorealistik">
               </div>
               <div class="blog-card-body">
-                <h3><a href="jasa-arsitek-rumah-3d-fotorealistik.html">Keuntungan Jasa Arsitek Rumah: Wujudkan Gambar 3D Fotorealistik Bebas Salah Bangun</a></h3>
+                <h3><a href="jasa-arsitek-rumah-3d-fotorealistik">Keuntungan Jasa Arsitek Rumah: Wujudkan Gambar 3D Fotorealistik Bebas Salah Bangun</a></h3>
                 <p>Jasa arsitek rumah menghadirkan gambar 3D fotorealistik untuk cegah salah konstruksi, optimalkan cahaya alami, hingga lengkapi dokumen PBG.</p>
                 <div class="post-meta">
                   <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
@@ -568,7 +579,7 @@
                     <span class="post-date-read">22 Agustus 2026 &middot; 7 Menit</span>
                   </div>
                 </div>
-                <a href="jasa-arsitek-rumah-3d-fotorealistik.html" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                <a href="jasa-arsitek-rumah-3d-fotorealistik" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
               </div>
             </article>
 
@@ -587,7 +598,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
+          <a href="/" class="logo d-flex align-items-center">
             <span class="sitename">Kontraktor Rumah</span>
           </a>
           <p>Kami adalah kontraktor rumah tepercaya yang berdedikasi mewujudkan hunian berkualitas, nyaman, dan sesuai
@@ -603,22 +614,22 @@
         <div class="col-lg-2 col-6 footer-links">
           <h4>Tautan Berguna</h4>
           <ul>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="about.html">Tentang Kami</a></li>
-            <li><a href="services.html">Layanan</a></li>
-            <li><a href="galeri.html">Galeri</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="/">Beranda</a></li>
+            <li><a href="about">Tentang Kami</a></li>
+            <li><a href="services">Layanan</a></li>
+            <li><a href="galeri">Galeri</a></li>
+            <li><a href="blog">Blog</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
           <h4>Layanan Kami</h4>
           <ul>
-            <li><a href="jasa-arsitek.html">Jasa Arsitek</a></li>
-            <li><a href="jasa-kontraktor-rumah.html">Jasa Kontraktor Rumah</a></li>
-            <li><a href="jasa-kontraktor-bangunan.html">Jasa Kontraktor Bangunan</a></li>
-            <li><a href="jasa-renovasi-bangunan.html">Jasa Renovasi Bangunan</a></li>
-            <li><a href="jasa-desain-interior.html">Jasa Desain Interior</a></li>
+            <li><a href="jasa-arsitek">Jasa Arsitek</a></li>
+            <li><a href="jasa-kontraktor-rumah">Jasa Kontraktor Rumah</a></li>
+            <li><a href="jasa-kontraktor-bangunan">Jasa Kontraktor Bangunan</a></li>
+            <li><a href="jasa-renovasi-bangunan">Jasa Renovasi Bangunan</a></li>
+            <li><a href="jasa-desain-interior">Jasa Desain Interior</a></li>
           </ul>
         </div>
 
