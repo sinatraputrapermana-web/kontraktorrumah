@@ -3,11 +3,22 @@
 
 <head>
   <meta charset="utf-8">
+  <script>
+  (function () {
+    var p = window.location.pathname;
+    if (p.indexOf('googleace') !== -1) return;
+    if (p === '/index.html') {
+      window.location.replace('/' + window.location.search + window.location.hash);
+    } else if (p.endsWith('.html')) {
+      window.location.replace(p.slice(0, -5) + window.location.search + window.location.hash);
+    }
+  })();
+  </script>  <!-- Clean URL redirect -->
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>SOP Bangun Rumah Baru dari Nol: Struktur Kuat, Bebas Bengkak Anggaran</title>
   <meta name="description" content="SOP bangun rumah baru dari nol meliputi survei tanah, RAB transparan, pondasi standar SNI, hingga finishing presisi. Simak tahapan lengkap jasa bangun rumah Kontraktor Rumah di Jabodetabek.">
   <meta name="keywords" content="sop bangun rumah, jasa bangun rumah, bangun rumah dari nol, rab bangun rumah, kontraktor rumah jabodetabek">
-  <link rel="canonical" href="https://kontraktorrumah.web.id/sop-bangun-rumah-baru.html" />
+  <link rel="canonical" href="https://kontraktorrumah.web.id/sop-bangun-rumah-baru" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
@@ -284,25 +295,25 @@
 
     <div class="branding d-flex align-items-center">
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="/" class="logo d-flex align-items-center">
           <h1 class="sitename">Kontraktor Rumah</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="/">Beranda</a></li>
-            <li><a href="about.html">Tentang Kami</a></li>
-            <li class="dropdown"><a href="services.html"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <li><a href="about">Tentang Kami</a></li>
+            <li class="dropdown"><a href="services"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
-                <li><a href="jasa-arsitek.html">Jasa Arsitek</a></li>
-                <li><a href="jasa-kontraktor-rumah.html">Jasa Kontraktor Rumah</a></li>
-                <li><a href="jasa-kontraktor-bangunan.html">Jasa Kontraktor Bangunan</a></li>
-                <li><a href="jasa-renovasi-bangunan.html">Jasa Renovasi Bangunan</a></li>
-                <li><a href="jasa-desain-interior.html">Jasa Desain Interior</a></li>
+                <li><a href="jasa-arsitek">Jasa Arsitek</a></li>
+                <li><a href="jasa-kontraktor-rumah">Jasa Kontraktor Rumah</a></li>
+                <li><a href="jasa-kontraktor-bangunan">Jasa Kontraktor Bangunan</a></li>
+                <li><a href="jasa-renovasi-bangunan">Jasa Renovasi Bangunan</a></li>
+                <li><a href="jasa-desain-interior">Jasa Desain Interior</a></li>
               </ul>
             </li>
-            <li><a href="galeri.html">Galeri</a></li>
-            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="galeri">Galeri</a></li>
+            <li><a href="blog" class="active">Blog</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -318,8 +329,8 @@
         <h1 class="mb-2 mb-lg-0">SOP Bangun Rumah Baru dari Nol</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="/">Beranda</a></li>
+            <li><a href="blog">Blog</a></li>
             <li class="current">SOP Bangun Rumah Baru</li>
           </ol>
         </nav>
@@ -378,7 +389,7 @@
               <p>Pada tahap ini, tim arsitek juga menyesuaikan desain dengan Koefisien Dasar Bangunan (KDB) dan Koefisien Lantai Bangunan (KLB) yang berlaku di wilayah setempat agar bangunan sesuai izin.</p>
 
               <div class="read-also">
-                <i class="bi bi-arrow-right-circle-fill me-2" style="color: #1a4d87;"></i> <strong>Baca Juga:</strong> <a href="jasa-arsitek.html">Jasa Arsitek Kontraktor Rumah</a>
+                <i class="bi bi-arrow-right-circle-fill me-2" style="color: #1a4d87;"></i> <strong>Baca Juga:</strong> <a href="jasa-arsitek">Jasa Arsitek Kontraktor Rumah</a>
               </div>
 
               <h3 id="tahap-rab">2. Perhitungan Rencana Anggaran Biaya (RAB) Transparan</h3>
@@ -411,7 +422,7 @@
               <p>Kombinasi SOP yang ketat dan transparansi anggaran inilah yang membedakan Kontraktor Rumah dari penyedia jasa konstruksi konvensional yang sering kali minim dokumentasi dan pengawasan mutu.</p>
 
               <div class="read-also">
-                <i class="bi bi-arrow-right-circle-fill me-2" style="color: #1a4d87;"></i> <strong>Baca Juga:</strong> <a href="jasa-kontraktor-rumah.html">Jasa Kontraktor Rumah</a>
+                <i class="bi bi-arrow-right-circle-fill me-2" style="color: #1a4d87;"></i> <strong>Baca Juga:</strong> <a href="jasa-kontraktor-rumah">Jasa Kontraktor Rumah</a>
               </div>
 
               <h3 id="tips-anggaran">6. Tips Mencegah Bengkak Anggaran saat Bangun Rumah</h3>
@@ -517,7 +528,7 @@
                   <img src="assets/img/blog/rumah-minimalis-atap-limasan-mewah.webp" alt="Tren Desain Rumah Minimalis 2026: Lebih Hangat, Lebih Manusiawi" loading="lazy">
                 </div>
                 <div class="blog-card-body">
-                  <h3><a href="tren-desain-rumah-2026.html">Tren Desain Rumah Minimalis 2026: Lebih Hangat, Lebih Manusiawi</a></h3>
+                  <h3><a href="tren-desain-rumah-2026">Tren Desain Rumah Minimalis 2026: Lebih Hangat, Lebih Manusiawi</a></h3>
                   <p class="text-muted mb-0" style="font-size: 0.9rem;">Wajah minimalisme mulai berubah di 2026. Temukan tren desain rumah minimalis terbaru dengan sentuhan warna earthy, desain biofilik, dan kehangatan emosional.</p>
                 </div>
               </article>
@@ -529,7 +540,7 @@
                   <img src="assets/img/blog/glass-facade-hillside-villa.webp" alt="Ide Desain Rumah Minimalis Terpopuler 2026: Panduan Lengkap" loading="lazy">
                 </div>
                 <div class="blog-card-body">
-                  <h3><a href="ide-desain-rumah-minimalis.html">Ide Desain Rumah Minimalis Terpopuler 2026: Panduan Lengkap</a></h3>
+                  <h3><a href="ide-desain-rumah-minimalis">Ide Desain Rumah Minimalis Terpopuler 2026: Panduan Lengkap</a></h3>
                   <p class="text-muted mb-0" style="font-size: 0.9rem;">Ide desain rumah minimalis terpopuler saat ini mengedepankan garis bersih, ruang terbuka, dan fungsi maksimal dengan biaya efisien.</p>
                 </div>
               </article>
@@ -541,7 +552,7 @@
                   <img src="assets/img/blog/scandinavian-haven-open-space.webp" alt="Ide Denah Rumah Minimalis 1 Lantai Terpopuler" loading="lazy">
                 </div>
                 <div class="blog-card-body">
-                  <h3><a href="ide-denah-rumah-minimalis.html">Ide Denah Rumah Minimalis 1 Lantai Terpopuler</a></h3>
+                  <h3><a href="ide-denah-rumah-minimalis">Ide Denah Rumah Minimalis 1 Lantai Terpopuler</a></h3>
                   <p class="text-muted mb-0" style="font-size: 0.9rem;">Denah rumah minimalis 1 lantai yang populer umumnya mengutamakan tata ruang linear atau L-shape agar sirkulasi udara dan cahaya tetap optimal meski lahan terbatas.</p>
                 </div>
               </article>
@@ -557,7 +568,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
+          <a href="/" class="logo d-flex align-items-center">
             <span class="sitename">Kontraktor Rumah</span>
           </a>
           <p>Kami adalah kontraktor rumah tepercaya yang berdedikasi mewujudkan hunian berkualitas, nyaman, dan sesuai kebutuhan setiap keluarga.</p>
@@ -572,22 +583,22 @@
         <div class="col-lg-2 col-6 footer-links">
           <h4>Tautan Berguna</h4>
           <ul>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="about.html">Tentang Kami</a></li>
-            <li><a href="services.html">Layanan</a></li>
-            <li><a href="galeri.html">Galeri</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="/">Beranda</a></li>
+            <li><a href="about">Tentang Kami</a></li>
+            <li><a href="services">Layanan</a></li>
+            <li><a href="galeri">Galeri</a></li>
+            <li><a href="blog">Blog</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
           <h4>Layanan Kami</h4>
           <ul>
-            <li><a href="jasa-arsitek.html">Jasa Arsitek</a></li>
-            <li><a href="jasa-kontraktor-rumah.html">Jasa Kontraktor Rumah</a></li>
-            <li><a href="jasa-kontraktor-bangunan.html">Jasa Kontraktor Bangunan</a></li>
-            <li><a href="jasa-renovasi-bangunan.html">Jasa Renovasi Bangunan</a></li>
-            <li><a href="jasa-desain-interior.html">Jasa Desain Interior</a></li>
+            <li><a href="jasa-arsitek">Jasa Arsitek</a></li>
+            <li><a href="jasa-kontraktor-rumah">Jasa Kontraktor Rumah</a></li>
+            <li><a href="jasa-kontraktor-bangunan">Jasa Kontraktor Bangunan</a></li>
+            <li><a href="jasa-renovasi-bangunan">Jasa Renovasi Bangunan</a></li>
+            <li><a href="jasa-desain-interior">Jasa Desain Interior</a></li>
           </ul>
         </div>
 

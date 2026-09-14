@@ -3,12 +3,23 @@
 
 <head>
   <meta charset="utf-8">
+  <script>
+  (function () {
+    var p = window.location.pathname;
+    if (p.indexOf('googleace') !== -1) return;
+    if (p === '/index.html') {
+      window.location.replace('/' + window.location.search + window.location.hash);
+    } else if (p.endsWith('.html')) {
+      window.location.replace(p.slice(0, -5) + window.location.search + window.location.hash);
+    }
+  })();
+  </script>  <!-- Clean URL redirect -->
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Inspirasi Desain Rumah Minimalis Terbaru untuk Hunian Impian | Kontraktor Rumah</title>
   <meta name="description" content="Inspirasi desain rumah minimalis terbaru: konsep open space, warna netral, jendela kaca besar, furnitur multifungsi, hingga sentuhan elemen natural.">
   <meta name="keywords" content="desain rumah minimalis terbaru, inspirasi rumah minimalis, konsep open space rumah minimalis, desain rumah minimalis modern, tips desain rumah minimalis">
   <meta name="robots" content="index, follow">
-  <link href="https://kontraktorrumah.web.id/rumah-minimalis-terbaru.html" rel="canonical">
+  <link href="https://kontraktorrumah.web.id/rumah-minimalis-terbaru" rel="canonical">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -172,7 +183,7 @@
     <div class="branding d-flex align-items-cente">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="/" class="logo d-flex align-items-center">
           <img src="assets/img/logo.png" alt="Kontraktor Rumah" class="logo-img" width="46" height="46">
           <h1 class="sitename">Kontraktor Rumah</h1>
         </a>
@@ -180,11 +191,11 @@
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="/">Beranda</a></li>
-            <li><a href="about.html">Tentang Kami</a></li>
-            <li class="dropdown"><a href="services.html"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <li><a href="about">Tentang Kami</a></li>
+            <li class="dropdown"><a href="services"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul class="dropdown-bubble-menu">
                 <li>
-                  <a href="jasa-arsitek.html" class="dropdown-bubble-item">
+                  <a href="jasa-arsitek" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-pencil-square"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Arsitek</strong>
@@ -193,7 +204,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="jasa-kontraktor-rumah.html" class="dropdown-bubble-item">
+                  <a href="jasa-kontraktor-rumah" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-house-door"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Kontraktor Rumah</strong>
@@ -202,7 +213,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="jasa-kontraktor-bangunan.html" class="dropdown-bubble-item">
+                  <a href="jasa-kontraktor-bangunan" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-building"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Kontraktor Bangunan</strong>
@@ -211,7 +222,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="jasa-renovasi-bangunan.html" class="dropdown-bubble-item">
+                  <a href="jasa-renovasi-bangunan" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-scissors"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Renovasi Bangunan</strong>
@@ -220,7 +231,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="jasa-desain-interior.html" class="dropdown-bubble-item">
+                  <a href="jasa-desain-interior" class="dropdown-bubble-item">
                     <span class="dropdown-bubble-icon"><i class="bi bi-lightbulb"></i></span>
                     <span class="dropdown-bubble-text">
                       <strong>Jasa Desain Interior</strong>
@@ -230,8 +241,8 @@
                 </li>
               </ul>
             </li>
-            <li><a href="galeri.html">Galeri</a></li>
-            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="galeri">Galeri</a></li>
+            <li><a href="blog" class="active">Blog</a></li>
             <li><a href="https://wa.me/6288989643555" class="btn-hubungi-kami">Hubungi Kami</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -251,8 +262,8 @@
         <h1 class="mb-2 mb-lg-0">Blog</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="/">Beranda</a></li>
+            <li><a href="blog">Blog</a></li>
             <li class="current">Inspirasi Desain Rumah Minimalis Terbaru untuk Hunian Impian</li>
           </ol>
         </nav>
@@ -321,7 +332,7 @@
             <div class="baca-juga-box">
               <div class="baca-juga-label"><i class="bi bi-bookmark-star-fill"></i> Baca Juga</div>
               <ul>
-                <li><a href="interior-open-space-rumah-minimalis.html"><i class="bi bi-arrow-right-short"></i> Panduan Desain Interior Open Space Rumah Minimalis Modern</a></li>
+                <li><a href="interior-open-space-rumah-minimalis"><i class="bi bi-arrow-right-short"></i> Panduan Desain Interior Open Space Rumah Minimalis Modern</a></li>
               </ul>
             </div>
 
@@ -343,7 +354,7 @@
             <div class="baca-juga-box">
               <div class="baca-juga-label"><i class="bi bi-bookmark-star-fill"></i> Baca Juga</div>
               <ul>
-                <li><a href="desain-dapur-minimalis.html"><i class="bi bi-arrow-right-short"></i> Ide Inspirasi Desain Dapur Minimalis yang Bikin Rumah Makin Nyaman</a></li>
+                <li><a href="desain-dapur-minimalis"><i class="bi bi-arrow-right-short"></i> Ide Inspirasi Desain Dapur Minimalis yang Bikin Rumah Makin Nyaman</a></li>
               </ul>
             </div>
 
@@ -455,7 +466,7 @@
                   alt="Tips Renovasi Rumah Lama Jadi Modern Tanpa Mengganggu Aktivitas Harian">
               </div>
               <div class="blog-card-body">
-                <h3><a href="renovasi-rumah-lama-jadi-modern.html">Tips Renovasi Rumah Lama Jadi Modern Tanpa Mengganggu Aktivitas Harian</a></h3>
+                <h3><a href="renovasi-rumah-lama-jadi-modern">Tips Renovasi Rumah Lama Jadi Modern Tanpa Mengganggu Aktivitas Harian</a></h3>
                 <p>Tips renovasi rumah lama jadi modern tanpa perlu mengungsi: strategi zonasi kerja, partisi debu, pemilihan material cepat pasang, hingga pengaturan jadwal tukang.</p>
                 <div class="post-meta">
                   <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
@@ -464,7 +475,7 @@
                     <span class="post-date-read">14 September 2026 &middot; 7 Menit</span>
                   </div>
                 </div>
-                <a href="renovasi-rumah-lama-jadi-modern.html" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                <a href="renovasi-rumah-lama-jadi-modern" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
               </div>
             </article>
 
@@ -475,7 +486,7 @@
                   alt="Format Kontrak Kerja Kontraktor: Rincian Lengkap & Contoh Perhitungan">
               </div>
               <div class="blog-card-body">
-                <h3><a href="kontrak-kerja-kontraktor.html">Format Kontrak Kerja Kontraktor: Rincian Lengkap & Contoh Perhitungan</a></h3>
+                <h3><a href="kontrak-kerja-kontraktor">Format Kontrak Kerja Kontraktor: Rincian Lengkap & Contoh Perhitungan</a></h3>
                 <p>Format kontrak kerja kontraktor lengkap: komponen wajib SPK, contoh perhitungan termin pembayaran, denda keterlambatan, hingga tips sebelum menandatangani.</p>
                 <div class="post-meta">
                   <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
@@ -484,7 +495,7 @@
                     <span class="post-date-read">7 September 2026 &middot; 8 Menit</span>
                   </div>
                 </div>
-                <a href="kontrak-kerja-kontraktor.html" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                <a href="kontrak-kerja-kontraktor" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
               </div>
             </article>
 
@@ -495,7 +506,7 @@
                   alt="Ide Inspirasi Desain Dapur Minimalis yang Bikin Rumah Makin Nyaman">
               </div>
               <div class="blog-card-body">
-                <h3><a href="desain-dapur-minimalis.html">Ide Inspirasi Desain Dapur Minimalis yang Bikin Rumah Makin Nyaman</a></h3>
+                <h3><a href="desain-dapur-minimalis">Ide Inspirasi Desain Dapur Minimalis yang Bikin Rumah Makin Nyaman</a></h3>
                 <p>Ide inspirasi desain dapur minimalis: elemen kunci, tips menata agar terasa lebih luas, hingga kesalahan yang sebaiknya dihindari saat renovasi dapur.</p>
                 <div class="post-meta">
                   <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
@@ -504,7 +515,7 @@
                     <span class="post-date-read">7 September 2026 &middot; 6 Menit</span>
                   </div>
                 </div>
-                <a href="desain-dapur-minimalis.html" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                <a href="desain-dapur-minimalis" class="read-more-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
               </div>
             </article>
 
@@ -523,7 +534,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
+          <a href="/" class="logo d-flex align-items-center">
             <span class="sitename">Kontraktor Rumah</span>
           </a>
           <p>Kami adalah kontraktor rumah tepercaya yang berdedikasi mewujudkan hunian berkualitas, nyaman, dan sesuai kebutuhan setiap keluarga.</p>
@@ -539,10 +550,10 @@
           <h4>Tautan Berguna</h4>
           <ul>
             <li><a href="/">Beranda</a></li>
-            <li><a href="about.html">Tentang Kami</a></li>
-            <li><a href="services.html">Layanan</a></li>
-            <li><a href="galeri.html">Galeri</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about">Tentang Kami</a></li>
+            <li><a href="services">Layanan</a></li>
+            <li><a href="galeri">Galeri</a></li>
+            <li><a href="blog">Blog</a></li>
             <li><a href="https://wa.me/6288989643555" class="btn-hubungi-kami">Hubungi Kami</a></li>
           </ul>
         </div>
@@ -550,11 +561,11 @@
         <div class="col-lg-2 col-6 footer-links">
           <h4>Layanan Kami</h4>
           <ul>
-            <li><a href="jasa-arsitek.html">Jasa Arsitek</a></li>
-              <li><a href="jasa-kontraktor-rumah.html">Jasa Kontraktor Rumah</a></li>
-              <li><a href="jasa-kontraktor-bangunan.html">Jasa Kontraktor Bangunan</a></li>
-              <li><a href="jasa-renovasi-bangunan.html">Jasa Renovasi Bangunan</a></li>
-              <li><a href="jasa-desain-interior.html">Jasa Desain Interior</a></li>
+            <li><a href="jasa-arsitek">Jasa Arsitek</a></li>
+              <li><a href="jasa-kontraktor-rumah">Jasa Kontraktor Rumah</a></li>
+              <li><a href="jasa-kontraktor-bangunan">Jasa Kontraktor Bangunan</a></li>
+              <li><a href="jasa-renovasi-bangunan">Jasa Renovasi Bangunan</a></li>
+              <li><a href="jasa-desain-interior">Jasa Desain Interior</a></li>
           </ul>
         </div>
 
