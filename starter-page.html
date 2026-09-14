@@ -3,6 +3,17 @@
 
 <head>
   <meta charset="utf-8">
+  <script>
+  (function () {
+    var p = window.location.pathname;
+    if (p.indexOf('googleace') !== -1) return;
+    if (p === '/index.html') {
+      window.location.replace('/' + window.location.search + window.location.hash);
+    } else if (p.endsWith('.html')) {
+      window.location.replace(p.slice(0, -5) + window.location.search + window.location.hash);
+    }
+  })();
+  </script>  <!-- Clean URL redirect -->
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Starter Page - Constructo Bootstrap Template</title>
   <meta name="description" content="">
@@ -58,7 +69,7 @@
     <div class="branding d-flex align-items-cente">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="/" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
           <!-- <img src="assets/img/logo.webp" alt=""> -->
           <h1 class="sitename">Constructo</h1>
@@ -66,18 +77,18 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="team.html">Team</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="services">Services</a></li>
+            <li><a href="projects">Projects</a></li>
+            <li><a href="team">Team</a></li>
             <li class="dropdown"><a href="#"><span>More Pages</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
-                <li><a href="service-details.html">Service Details</a></li>
-                <li><a href="project-details.html">Project Details</a></li>
-                <li><a href="quote.html">Quote Form</a></li>
-                <li><a href="terms.html">Terms</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="service-details">Service Details</a></li>
+                <li><a href="project-details">Project Details</a></li>
+                <li><a href="quote">Quote Form</a></li>
+                <li><a href="terms">Terms</a></li>
+                <li><a href="privacy">Privacy</a></li>
                 <li><a href="404.html">404</a></li>
               </ul>
             </li>
@@ -98,7 +109,7 @@
                 <li><a href="#">Dropdown 4</a></li>
               </ul>
             </li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact">Contact</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -117,7 +128,7 @@
         <h1 class="mb-2 mb-lg-0">Starter Page</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li class="current">Starter Page</li>
           </ol>
         </nav>
@@ -146,7 +157,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
+          <a href="/" class="logo d-flex align-items-center">
             <span class="sitename">MyWebsite</span>
           </a>
           <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
