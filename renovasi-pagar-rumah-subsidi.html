@@ -3,17 +3,6 @@
 
 <head>
   <meta charset="utf-8">
-  <script>
-  (function () {
-    var p = window.location.pathname;
-    if (p.indexOf('googleace') !== -1) return;
-    if (p === '/index.html') {
-      window.location.replace('/' + window.location.search + window.location.hash);
-    } else if (p.endsWith('.html')) {
-      window.location.replace(p.slice(0, -5) + window.location.search + window.location.hash);
-    }
-  })();
-  </script>  <!-- Clean URL redirect -->
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Renovasi Pagar Rumah Subsidi Type 36: Panduan Lengkap | Kontraktor Rumah</title>
   <meta name="description" content="Panduan lengkap renovasi pagar rumah subsidi type 36: pemilihan model, material tahan lama, tinggi ideal, hingga jenis pintu pagar sesuai lahan terbatas.">
@@ -70,14 +59,7 @@
   <!-- Custom Enhance CSS (gradasi & animasi tambahan) -->
   <link href="assets/css/custom-enhance.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Constructo
-  * Template URL: https://bootstrapmade.com/constructo-bootstrap-construction-template/
-  * Updated: Mar 03 2026 with Bootstrap v5.3.8
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-
+  
   <!-- Schema.org: BlogPosting -->
   <script type="application/ld+json">
   {
@@ -92,7 +74,7 @@
     "author": {
       "@type": "Person",
       "name": "Anggun Tri Stya",
-      "url": "https://kontraktorrumah.web.id/about.html"
+      "url": "https://kontraktorrumah.web.id/about"
     },
     "publisher": {
       "@type": "Organization",
@@ -183,7 +165,7 @@
     <div class="branding d-flex align-items-cente">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="/" class="logo d-flex align-items-center">
+        <a href="index" class="logo d-flex align-items-center">
           <img src="assets/img/logo.png" alt="Kontraktor Rumah" class="logo-img" width="46" height="46">
           <h1 class="sitename">Kontraktor Rumah</h1>
         </a>
@@ -262,7 +244,7 @@
         <h1 class="mb-2 mb-lg-0">Blog</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="/">Beranda</a></li>
+            <li><a href="index">Beranda</a></li>
             <li><a href="blog">Blog</a></li>
             <li class="current">Renovasi Pagar Rumah Subsidi Type 36: Panduan Lengkap</li>
           </ol>
@@ -544,7 +526,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="/" class="logo d-flex align-items-center">
+          <a href="index" class="logo d-flex align-items-center">
             <span class="sitename">Kontraktor Rumah</span>
           </a>
           <p>Kami adalah kontraktor rumah tepercaya yang berdedikasi mewujudkan hunian berkualitas, nyaman, dan sesuai kebutuhan setiap keluarga.</p>
@@ -618,8 +600,6 @@
   <script src="assets/js/main.js"></script>
 
   <!-- Custom Enhance JS (counter, reveal, ripple, parallax) -->
-  <script src="assets/js/custom-enhance.js"></script>
-
-</body>
+  </body>
 
 </html>

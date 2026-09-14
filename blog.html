@@ -3,17 +3,6 @@
 
 <head>
   <meta charset="utf-8">
-  <script>
-  (function () {
-    var p = window.location.pathname;
-    if (p.indexOf('googleace') !== -1) return;
-    if (p === '/index.html') {
-      window.location.replace('/' + window.location.search + window.location.hash);
-    } else if (p.endsWith('.html')) {
-      window.location.replace(p.slice(0, -5) + window.location.search + window.location.hash);
-    }
-  })();
-  </script>  <!-- Clean URL redirect -->
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Blog - Kontraktor Rumah</title>
   <meta name="description" content="Baca artikel dan tips seputar konstruksi, renovasi, dan desain rumah dari tim ahli Kontraktor Rumah untuk membantu Anda merencanakan proyek rumah impian.">
@@ -57,7 +46,7 @@
     <div class="branding d-flex align-items-cente">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="/" class="logo d-flex align-items-center">
+        <a href="index" class="logo d-flex align-items-center">
           <img src="assets/img/logo.png" alt="Kontraktor Rumah" class="logo-img" width="46" height="46">
           <h1 class="sitename">Kontraktor Rumah</h1>
         </a>
@@ -136,7 +125,7 @@
         <h1 class="mb-2 mb-lg-0">Blog</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="/">Beranda</a></li>
+            <li><a href="index">Beranda</a></li>
             <li class="current">Blog</li>
           </ol>
         </nav>
@@ -155,314 +144,8 @@
 
 
 
-        <!-- 14 September 2026 -->
+        <!-- 3 September 2026 -->
         <div class="blog-grid">
-
-          <article class="blog-card" data-category="biaya-rab" data-aos="fade-up" data-aos-delay="100"
-            style="animation-delay:0.05s">
-            <div class="blog-card-image">
-              <span class="blog-card-category">Biaya &amp; RAB</span>
-              <img fetchpriority="high" src="assets/img/blog/cara-membuat-rab-bangun-rumah-hemat-budget.webp"
-                alt="Panduan Cara Menghemat Budget Bangun Rumah untuk Pemula">
-            </div>
-            <div class="blog-card-body">
-              <h3><a href="hemat-budget-bangun-rumah">Panduan Cara Menghemat Budget Bangun Rumah untuk Pemula</a></h3>
-              <p>Panduan cara menghemat budget bangun rumah untuk pemula: susun RAB detail, pilih bentuk bangunan sederhana, terapkan konsep rumah tumbuh, hingga survei harga material.</p>
-              <div class="post-meta">
-                <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
-                <div class="post-meta-text">
-                  <span class="author-name">Anggun Tri Stya</span>
-                  <span class="post-date-read">14 September 2026 &middot; 7 Menit</span>
-                </div>
-              </div>
-              <a href="hemat-budget-bangun-rumah" class="read-more-link">Baca Selengkapnya <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </article>
-
-
-          <!-- 14 September 2026 -->
-          <article class="blog-card" data-category="desain-rumah" data-aos="fade-up" data-aos-delay="100"
-            style="animation-delay:0.05s">
-            <div class="blog-card-image">
-              <span class="blog-card-category">Desain Rumah</span>
-              <img fetchpriority="high" src="assets/img/blog/desain-ruang-keluarga-open-space-rumah-minimalis.webp"
-                alt="Inspirasi Desain Rumah Minimalis Terbaru untuk Hunian Impian">
-            </div>
-            <div class="blog-card-body">
-              <h3><a href="rumah-minimalis-terbaru">Inspirasi Desain Rumah Minimalis Terbaru untuk Hunian Impian</a></h3>
-              <p>Inspirasi desain rumah minimalis terbaru: konsep open space, warna netral, jendela kaca besar, furnitur multifungsi, hingga sentuhan elemen natural.</p>
-              <div class="post-meta">
-                <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
-                <div class="post-meta-text">
-                  <span class="author-name">Anggun Tri Stya</span>
-                  <span class="post-date-read">14 September 2026 &middot; 6 Menit</span>
-                </div>
-              </div>
-              <a href="rumah-minimalis-terbaru" class="read-more-link">Baca Selengkapnya <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </article>
-
-
-          <!-- 14 September 2026 -->
-          <article class="blog-card" data-category="renovasi" data-aos="fade-up" data-aos-delay="100"
-            style="animation-delay:0.05s">
-            <div class="blog-card-image">
-              <span class="blog-card-category">Renovasi</span>
-              <img fetchpriority="high" src="assets/img/blog/renovasi-rumah-lama-jadi-modern-sistem-zonasi.webp"
-                alt="Tips Renovasi Rumah Lama Jadi Modern Tanpa Mengganggu Aktivitas Harian">
-            </div>
-            <div class="blog-card-body">
-              <h3><a href="renovasi-rumah-lama-jadi-modern">Tips Renovasi Rumah Lama Jadi Modern Tanpa Mengganggu Aktivitas Harian</a></h3>
-              <p>Tips renovasi rumah lama jadi modern tanpa perlu mengungsi: strategi zonasi kerja, partisi debu, pemilihan material cepat pasang, hingga pengaturan jadwal tukang.</p>
-              <div class="post-meta">
-                <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
-                <div class="post-meta-text">
-                  <span class="author-name">Anggun Tri Stya</span>
-                  <span class="post-date-read">14 September 2026 &middot; 7 Menit</span>
-                </div>
-              </div>
-              <a href="renovasi-rumah-lama-jadi-modern" class="read-more-link">Baca Selengkapnya <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </article>
-
-
-          <!-- 7 September 2026 -->
-          <article class="blog-card" data-category="legalitas-kontrak" data-aos="fade-up" data-aos-delay="100"
-            style="animation-delay:0.05s">
-            <div class="blog-card-image">
-              <span class="blog-card-category">Legalitas & Kontrak</span>
-              <img fetchpriority="high" src="assets/img/blog/format-kontrak-kerja-kontraktor-bangunan.webp"
-                alt="Format Kontrak Kerja Kontraktor: Rincian Lengkap & Contoh Perhitungan">
-            </div>
-            <div class="blog-card-body">
-              <h3><a href="kontrak-kerja-kontraktor">Format Kontrak Kerja Kontraktor: Rincian Lengkap & Contoh Perhitungan</a></h3>
-              <p>Format kontrak kerja kontraktor lengkap: komponen wajib SPK, contoh perhitungan termin pembayaran, denda keterlambatan, hingga tips sebelum menandatangani.</p>
-              <div class="post-meta">
-                <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
-                <div class="post-meta-text">
-                  <span class="author-name">Anggun Tri Stya</span>
-                  <span class="post-date-read">7 September 2026 &middot; 8 Menit</span>
-                </div>
-              </div>
-              <a href="kontrak-kerja-kontraktor" class="read-more-link">Baca Selengkapnya <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </article>
-
-
-          <article class="blog-card" data-category="desain-rumah" data-aos="fade-up" data-aos-delay="100"
-            style="animation-delay:0.05s">
-            <div class="blog-card-image">
-              <span class="blog-card-category">Desain Rumah</span>
-              <img fetchpriority="high" src="assets/img/blog/desain-dapur-minimalis-modern-pencahayaan-alami.webp"
-                alt="Ide Inspirasi Desain Dapur Minimalis yang Bikin Rumah Makin Nyaman">
-            </div>
-            <div class="blog-card-body">
-              <h3><a href="desain-dapur-minimalis">Ide Inspirasi Desain Dapur Minimalis yang Bikin Rumah Makin Nyaman</a></h3>
-              <p>Ide inspirasi desain dapur minimalis: elemen kunci, tips menata agar terasa lebih luas, hingga kesalahan yang sebaiknya dihindari saat renovasi dapur.</p>
-              <div class="post-meta">
-                <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
-                <div class="post-meta-text">
-                  <span class="author-name">Anggun Tri Stya</span>
-                  <span class="post-date-read">7 September 2026 &middot; 6 Menit</span>
-                </div>
-              </div>
-              <a href="desain-dapur-minimalis" class="read-more-link">Baca Selengkapnya <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </article>
-
-
-          <!-- 5 September 2026 -->
-          <article class="blog-card" data-category="renovasi" data-aos="fade-up" data-aos-delay="100"
-            style="animation-delay:0.05s">
-            <div class="blog-card-image">
-              <span class="blog-card-category">Renovasi</span>
-              <img fetchpriority="high" src="assets/img/blog/proses-perbaikan-dinding-retak-struktur-interior.webp"
-                alt="Panduan Jasa Perbaikan Dinding Retak: Biaya, Waktu & Prosesnya">
-            </div>
-            <div class="blog-card-body">
-              <h3><a href="jasa-perbaikan-dinding-retak">Panduan Jasa Perbaikan Dinding Retak: Biaya, Waktu & Prosesnya</a></h3>
-              <p>Panduan jasa perbaikan dinding retak: cara membedakan retak rambut & retak struktur, tahapan pengerjaan, estimasi biaya per meter lari, hingga tips mencegahnya.</p>
-              <div class="post-meta">
-                <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
-                <div class="post-meta-text">
-                  <span class="author-name">Anggun Tri Stya</span>
-                  <span class="post-date-read">5 September 2026 &middot; 7 Menit</span>
-                </div>
-              </div>
-              <a href="jasa-perbaikan-dinding-retak" class="read-more-link">Baca Selengkapnya <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </article>
-
-
-          <article class="blog-card" data-category="kontraktor" data-aos="fade-up" data-aos-delay="100"
-            style="animation-delay:0.05s">
-            <div class="blog-card-image">
-              <span class="blog-card-category">Kontraktor</span>
-              <img fetchpriority="high" src="assets/img/blog/diskusi-kontrak-jasa-bangun-rumah-type-45.webp"
-                alt="Yang Perlu Diketahui Soal Jasa Bangun Rumah Type 45 agar Tidak Salah Pilih">
-            </div>
-            <div class="blog-card-body">
-              <h3><a href="jasa-bangun-rumah-type-45">Yang Perlu Diketahui Soal Jasa Bangun Rumah Type 45 agar Tidak Salah Pilih</a></h3>
-              <p>Yang perlu diketahui soal jasa bangun rumah type 45 agar tidak salah pilih: transparansi harga, portofolio, kontrak kerja, komunikasi, hingga legalitas kontraktor.</p>
-              <div class="post-meta">
-                <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
-                <div class="post-meta-text">
-                  <span class="author-name">Anggun Tri Stya</span>
-                  <span class="post-date-read">5 September 2026 &middot; 7 Menit</span>
-                </div>
-              </div>
-              <a href="jasa-bangun-rumah-type-45" class="read-more-link">Baca Selengkapnya <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </article>
-
-
-          <article class="blog-card" data-category="biaya-rab" data-aos="fade-up" data-aos-delay="100"
-            style="animation-delay:0.05s">
-            <div class="blog-card-image">
-              <span class="blog-card-category">Biaya & RAB</span>
-              <img fetchpriority="high" src="assets/img/blog/ilustrasi-perencanaan-rab-dan-alokasi-biaya-bangun-rumah.webp"
-                alt="Tips Mengontrol Pengeluaran Bangun Rumah: Rincian Lengkap & Contoh Perhitungan">
-            </div>
-            <div class="blog-card-body">
-              <h3><a href="kontrol-pengeluaran-bangun-rumah">Tips Mengontrol Pengeluaran Bangun Rumah: Rincian Lengkap & Contoh Perhitungan</a></h3>
-              <p>Tips mengontrol pengeluaran bangun rumah: RAB detail, desain minimalis, survei harga material, sistem borongan, hingga contoh perhitungan alokasi anggaran.</p>
-              <div class="post-meta">
-                <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
-                <div class="post-meta-text">
-                  <span class="author-name">Anggun Tri Stya</span>
-                  <span class="post-date-read">5 September 2026 &middot; 8 Menit</span>
-                </div>
-              </div>
-              <a href="kontrol-pengeluaran-bangun-rumah" class="read-more-link">Baca Selengkapnya <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </article>
-
-
-          <!-- 4 September 2026 -->
-          <article class="blog-card" data-category="arsitek" data-aos="fade-up" data-aos-delay="100"
-            style="animation-delay:0.05s">
-            <div class="blog-card-image">
-              <span class="blog-card-category">Arsitek</span>
-              <img fetchpriority="high" src="assets/img/blog/konsultasi-jasa-arsitek-desain-rumah-3d.webp"
-                alt="Manfaat Visualisasi 3D dari Jasa Arsitek Rumah Sebelum Bangun">
-            </div>
-            <div class="blog-card-body">
-              <h3><a href="manfaat-visualisasi-3d-arsitek">Manfaat Visualisasi 3D dari Jasa Arsitek Rumah Sebelum Bangun</a></h3>
-              <p>Manfaat visualisasi 3D dari jasa arsitek rumah sebelum bangun: lihat hasil akhir lebih awal, eksplorasi material tanpa risiko, panduan tukang, hingga efisiensi anggaran.</p>
-              <div class="post-meta">
-                <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
-                <div class="post-meta-text">
-                  <span class="author-name">Anggun Tri Stya</span>
-                  <span class="post-date-read">4 September 2026 &middot; 7 Menit</span>
-                </div>
-              </div>
-              <a href="manfaat-visualisasi-3d-arsitek" class="read-more-link">Baca Selengkapnya <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </article>
-
-
-          <article class="blog-card" data-category="renovasi" data-aos="fade-up" data-aos-delay="100"
-            style="animation-delay:0.05s">
-            <div class="blog-card-image">
-              <span class="blog-card-category">Renovasi</span>
-              <img fetchpriority="high" src="assets/img/blog/sekat-plastik-debu-renovasi-rumah.webp"
-                alt="Langkah Efektif Tahapan Renovasi Rumah Tanpa Pindah Hunian">
-            </div>
-            <div class="blog-card-body">
-              <h3><a href="renovasi-rumah-tanpa-pindah">Langkah Efektif Tahapan Renovasi Rumah Tanpa Pindah Hunian</a></h3>
-              <p>Langkah efektif renovasi rumah tanpa pindah hunian: sistem zonasi ruangan, isolasi debu, kesepakatan jadwal kerja, hingga keamanan jalur lalu lalang selama proyek.</p>
-              <div class="post-meta">
-                <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
-                <div class="post-meta-text">
-                  <span class="author-name">Anggun Tri Stya</span>
-                  <span class="post-date-read">4 September 2026 &middot; 7 Menit</span>
-                </div>
-              </div>
-              <a href="renovasi-rumah-tanpa-pindah" class="read-more-link">Baca Selengkapnya <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </article>
-
-
-          <article class="blog-card" data-category="material-struktur" data-aos="fade-up" data-aos-delay="100"
-            style="animation-delay:0.05s">
-            <div class="blog-card-image">
-              <span class="blog-card-category">Material & Struktur</span>
-              <img fetchpriority="high" src="assets/img/blog/interior-rumah-mewah-klasik-marmer-pintu-kayu.webp"
-                alt="Standar Material Premium untuk Kontraktor Rumah Mewah Klasik">
-            </div>
-            <div class="blog-card-body">
-              <h3><a href="material-premium-rumah-klasik">Standar Material Premium untuk Kontraktor Rumah Mewah Klasik</a></h3>
-              <p>Standar material premium kontraktor rumah mewah klasik: marmer slab impor, kayu jati kering sempurna, logam anti-karat custom, hingga cat eksterior tahan cuaca ekstrem.</p>
-              <div class="post-meta">
-                <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
-                <div class="post-meta-text">
-                  <span class="author-name">Anggun Tri Stya</span>
-                  <span class="post-date-read">4 September 2026 &middot; 8 Menit</span>
-                </div>
-              </div>
-              <a href="material-premium-rumah-klasik" class="read-more-link">Baca Selengkapnya <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </article>
-
-
-          <!-- 3 September 2026 -->
-
-          <article class="blog-card" data-category="kontraktor" data-aos="fade-up" data-aos-delay="100"
-            style="animation-delay:0.05s">
-            <div class="blog-card-image">
-              <span class="blog-card-category">Kontraktor</span>
-              <img fetchpriority="high" src="assets/img/blog/jasa-kontraktor-rumah-tahap-awal-galian-pondasi.webp"
-                alt="Panduan Kerja Jasa Kontraktor Rumah Tinggal dari Tahap Awal">
-            </div>
-            <div class="blog-card-body">
-              <h3><a href="jasa-kontraktor-rumah-tahap-awal">Panduan Kerja Jasa Kontraktor Rumah Tinggal dari Tahap Awal</a></h3>
-              <p>Panduan kerja jasa kontraktor rumah tinggal dari tahap awal: alasan menggunakan kontraktor, tahapan persiapan lahan, hingga progres pengecoran pondasi & sloof.</p>
-              <div class="post-meta">
-                <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
-                <div class="post-meta-text">
-                  <span class="author-name">Anggun Tri Stya</span>
-                  <span class="post-date-read">3 September 2026 &middot; 8 Menit</span>
-                </div>
-              </div>
-              <a href="jasa-kontraktor-rumah-tahap-awal" class="read-more-link">Baca Selengkapnya <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </article>
-
-
-          <article class="blog-card" data-category="renovasi" data-aos="fade-up" data-aos-delay="100"
-            style="animation-delay:0.05s">
-            <div class="blog-card-image">
-              <span class="blog-card-category">Renovasi</span>
-              <img fetchpriority="high" src="assets/img/blog/pembuatan-dapur-semi-terbuka-meja-cor-rumah.webp"
-                alt="Inspirasi Renovasi Rumah Subsidi Type 36: Dapur & Pagar">
-            </div>
-            <div class="blog-card-body">
-              <h3><a href="progres-dapur-pagar-subsidi">Inspirasi Renovasi Rumah Subsidi Type 36: Dapur & Pagar</a></h3>
-              <p>Inspirasi renovasi rumah subsidi type 36 pada dapur & pagar: ketentuan renovasi fasad, tahapan pembangunan dapur semi-terbuka, hingga desain pagar minimalis.</p>
-              <div class="post-meta">
-                <img loading="lazy" decoding="async" src="assets/img/person/mandor-anggun.webp" alt="Anggun Tri Stya" class="post-author-avatar">
-                <div class="post-meta-text">
-                  <span class="author-name">Anggun Tri Stya</span>
-                  <span class="post-date-read">3 September 2026 &middot; 7 Menit</span>
-                </div>
-              </div>
-              <a href="progres-dapur-pagar-subsidi" class="read-more-link">Baca Selengkapnya <i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </article>
-
 
           <article class="blog-card" data-category="biaya-rab" data-aos="fade-up" data-aos-delay="100"
             style="animation-delay:0.05s">
@@ -1062,7 +745,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="/" class="logo d-flex align-items-center">
+          <a href="index" class="logo d-flex align-items-center">
             <span class="sitename">Kontraktor Rumah</span>
           </a>
           <p>Kami adalah kontraktor rumah tepercaya yang berdedikasi mewujudkan hunian berkualitas, nyaman, dan sesuai kebutuhan setiap keluarga.</p>
@@ -1136,8 +819,6 @@
   <script src="assets/js/main.js"></script>
 
   <!-- Custom Enhance JS (counter, reveal, ripple, parallax) -->
-  <script src="assets/js/custom-enhance.js"></script>
-
-</body>
+  </body>
 
 </html>

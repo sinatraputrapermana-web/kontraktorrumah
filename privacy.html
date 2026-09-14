@@ -3,17 +3,6 @@
 
 <head>
   <meta charset="utf-8">
-  <script>
-  (function () {
-    var p = window.location.pathname;
-    if (p.indexOf('googleace') !== -1) return;
-    if (p === '/index.html') {
-      window.location.replace('/' + window.location.search + window.location.hash);
-    } else if (p.endsWith('.html')) {
-      window.location.replace(p.slice(0, -5) + window.location.search + window.location.hash);
-    }
-  })();
-  </script>  <!-- Clean URL redirect -->
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Privacy - Constructo Bootstrap Template</title>
   <meta name="description" content="">
@@ -38,14 +27,7 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css?v=5" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Constructo
-  * Template URL: https://bootstrapmade.com/constructo-bootstrap-construction-template/
-  * Updated: Mar 03 2026 with Bootstrap v5.3.8
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+  </head>
 
 <body class="privacy-page">
 
@@ -54,9 +36,9 @@
     <div class="branding d-flex align-items-cente">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="/" class="logo d-flex align-items-center">
+        <a href="index" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.webp" alt=""> -->
+          <!-- <img src="assets/img/logo.png" alt=""> -->
           <h1 class="sitename">Constructo</h1>
         </a>
 
@@ -134,7 +116,7 @@
         <h1 class="mb-2 mb-lg-0">Privacy</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="/">Home</a></li>
+            <li><a href="index">Home</a></li>
             <li class="current">Privacy</li>
           </ol>
         </nav>
@@ -270,7 +252,7 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="/" class="logo d-flex align-items-center">
+          <a href="index" class="logo d-flex align-items-center">
             <span class="sitename">Kontraktor Rumah</span>
           </a>
           <p>Kami adalah kontraktor rumah tepercaya yang berdedikasi mewujudkan hunian berkualitas, nyaman, dan sesuai kebutuhan setiap keluarga.</p>
