@@ -104,7 +104,7 @@
   </url>
   <url>
     <loc>https://kontraktorrumah.web.id/blog</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -375,6 +375,12 @@
   <url>
     <loc>https://kontraktorrumah.web.id/kontraktor-rumah-depok</loc>
     <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kontraktorrumah.web.id/renovasi-teras-minimalis</loc>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
